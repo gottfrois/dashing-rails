@@ -3,10 +3,6 @@ require 'dashing/engine'
 require 'rufus-scheduler'
 
 module Dashing
-  def self.dashing_path
-
-  end
-
   def self.histories
     @histories ||= {}
   end
