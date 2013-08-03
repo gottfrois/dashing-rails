@@ -6,7 +6,7 @@ module Dashing
     before_filter :check_dashbord_name,   only: :dashboard
     before_filter :check_widget_name,     only: :widget
 
-    rescue_from ActionView::MissingTemplate, with: :template_not_found
+    # rescue_from ActionView::MissingTemplate, with: :template_not_found
 
     respond_to :html
 
