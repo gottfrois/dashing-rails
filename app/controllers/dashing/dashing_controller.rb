@@ -2,7 +2,6 @@ module Dashing
   class DashingController < ApplicationController
     include ActionController::Live
 
-    before_filter :set_response_headers,  only: :events
     before_filter :check_dashbord_name,   only: :dashboard
     before_filter :check_widget_name,     only: :widget
 
@@ -13,22 +12,8 @@ module Dashing
     def index
     end
 
-    def events
-      begin
-        loop do
-          out = Dashing.histories.map { |id,event| "data: #{event.to_json}\n\n" }
-          response.stream.write out.join('')
-          sleep 1
-        end
-      rescue IOError
-        Rails.info 'Stream closed'
-      ensure
-        response.stream.close
-      end
-    end
-
     def dashboard
-      render file: dashboard_path, layout: 'dashboard'
+      render file: dashboard_path, layout: 'dashing/dashboard'
     end
 
     def widget
@@ -49,16 +34,12 @@ module Dashing
       raise 'bad widget name' unless params[:widget] =~ /\A[a-zA-z0-9_\-]+\z/
     end
 
-    def set_response_headers
-      response.headers['Content-Type'] = 'text/event-stream'
-    end
-
     def widget_path
-      Rails.root.join('app', 'dashing', 'widgets', params[:widget])
+      "dashing/widgets/#{params[:widget]}/#{params[:widget]}"
     end
 
     def dashboard_path
-      Rails.root.join('app', 'dashing', 'dashboards', params[:dashboard])
+      "dashing/dashboards/#{params[:dashboard]}"
     end
   end
 end
