@@ -2,33 +2,34 @@ module Dashing
   class EventsController < ApplicationController
     include ActionController::Live
 
-    before_filter :set_response_headers, only: :index
-
     respond_to :html
 
     def index
-      begin
-        loop do
-          out = Dashing.histories.map do |id,event|
-            "data: #{event.to_json}\n\n"
-          end
-          response.stream.write out.join('')
-          sleep 1
+      response.headers['Content-Type'] = 'text/event-stream'
+
+      redis = Redis.new
+      redis.psubscribe("#{Dashing.config.redis_namespace}.*") do |on|
+        on.pmessage do |pattern, event, data|
+          response.stream.write("data: #{data}\n\n")
         end
-      rescue IOError
-        Rails.logger.info 'Stream closed'
-      ensure
-        response.stream.close
       end
+    rescue IOError
+      logger.info "[Dashing][#{Time.now.utc.to_s}] Stream closed"
+    ensure
+      redis.quit
+      response.stream.close
     end
 
     def create
+      response.headers['Content-Type'] = 'text/javascript'
+
+      Dashing.redis.publish("#{Dashing.config.redis_namespace}.create", event_params[:data].to_json)
     end
 
     private
 
-    def set_response_headers
-      response.headers['Content-Type'] = 'text/event-stream'
+    def event_params
+      params.require(:event).permit(:data)
     end
 
   end

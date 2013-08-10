@@ -4,10 +4,10 @@ module Dashing
 
     config.assets.paths << Dashing::Engine.root.join('app', 'assets', 'fonts')
     config.assets.paths << Dashing::Engine.root.join('app', 'views', 'dashing')
-    config.assets.paths << '/app/views/dashing/'
+    config.assets.paths << Dashing.config.view_path
 
-    initializer 'add dashing jobs to path' do
-      Dir[Rails.root.join('app', 'jobs', '**', '*.rb')].each { |file| require file }
+    initializer 'require dashing jobs' do
+      Dir[Rails.root.join(Dashing.config.jobs_path, '**', '*.rb')].each { |file| require file }
     end
   end
 end

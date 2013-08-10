@@ -1,17 +1,24 @@
-require 'dashing/engine'
-
-require 'rufus-scheduler'
-
 module Dashing
-  def self.histories
-    @histories ||= {}
-  end
+  class << self
 
-  def self.scheduler
-    @scheduler ||= ::Rufus::Scheduler.new
-  end
+    delegate :scheduler, :redis, to: :config
 
-  def self.send_event(id, data)
-    histories[id] = data.merge(id: id, updatedAt: Time.now.utc.to_i)
+    attr_accessor :configuration
+
+    def config
+      self.configuration ||= Configuration.new
+    end
+
+    def configure
+      yield config
+    end
+
+    def send_event(id, data)
+      redis.publish("#{Dashing.config.redis_namespace}.create", data.merge(id: id, updatedAt: Time.now.utc.to_i).to_json)
+    end
+
   end
 end
+
+require 'dashing/configuration'
+require 'dashing/engine'

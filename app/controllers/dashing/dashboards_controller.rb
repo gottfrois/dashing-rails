@@ -9,7 +9,7 @@ module Dashing
     end
 
     def show
-      render file: dashboard_path, layout: 'dashing/dashboard'
+      render file: dashboard_path, layout: Dashing.config.dashboard_layout
     end
 
     private
@@ -19,7 +19,7 @@ module Dashing
     end
 
     def dashboard_path
-      Rails.root.join('app', 'views', 'dashing', 'dashboards', params[:name])
+      Rails.root.join(Dashing.config.dashboards_path, params[:name])
     end
 
     def template_not_found
