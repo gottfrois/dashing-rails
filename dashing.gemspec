@@ -25,4 +25,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails',   '~> 2.0'
   s.add_development_dependency 'pry-rails',     '~> 0.2.2'
   s.add_development_dependency 'better_errors', '~> 0.8.0'
+  s.add_development_dependency 'coveralls'
 end

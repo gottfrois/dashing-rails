@@ -1,3 +1,3 @@
 # Dashing
 
-This project rocks and uses MIT-LICENSE.
+[![Code Climate](https://codeclimate.com/github/gottfrois/dashing-rails.png)](https://codeclimate.com/github/gottfrois/dashing-rails)
