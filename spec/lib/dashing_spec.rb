@@ -25,4 +25,17 @@ describe Dashing do
 
   end
 
+  describe '.first_dashboard' do
+
+    let(:dir) { 'foo' }
+    let(:dirs) { [dir] }
+
+    before do
+      Dir.stub(:[]).and_return(dirs)
+    end
+
+    it { expect(Dashing.first_dashboard).to eq(dir) }
+
+  end
+
 end

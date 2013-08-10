@@ -5,7 +5,8 @@ module Dashing
     respond_to :html
 
     def index
-      response.headers['Content-Type'] = 'text/event-stream'
+      response.headers['Content-Type']      = 'text/event-stream'
+      response.headers['X-Accel-Buffering'] = 'no'
 
       redis = Redis.new
       redis.psubscribe("#{Dashing.config.redis_namespace}.*") do |on|

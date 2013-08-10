@@ -13,6 +13,11 @@ module Dashing
       yield config
     end
 
+    def first_dashboard
+      files = Dir[Rails.root.join(config.dashboards_path, '*')].collect { |f| File.basename(f, '.*') }
+      files.sort.first
+    end
+
     def send_event(id, data)
       redis.publish("#{Dashing.config.redis_namespace}.create", data.merge(id: id, updatedAt: Time.now.utc.to_i).to_json)
     end

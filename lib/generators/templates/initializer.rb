@@ -39,4 +39,12 @@ Dashing.configure do |config|
   # The widgets path used to find your custom widgets.
   # Dashing provide default widgets.
   # config.widgets_path = 'app/views/dashing/widgets/'
+
+  # Default dashboard name to load when going to /dashing/dashboards
+  # config.default_dashboard = nil
+
+  # A secure random string to authenticate with for curl requests.
+  # Put nil if you don't want to use authentication.
+  # You can use SecureRandom.hex to generate a hex.
+  # config.auth_token = nil
 end

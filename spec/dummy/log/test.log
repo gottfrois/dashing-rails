@@ -793,3 +793,293 @@ Processing by Dashing::WidgetsController#update as HTML
 Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
 Processing by Dashing::WidgetsController#update as HTML
 Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#index as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#index as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#index as HTML
+Completed 500 Internal Server Error in 38814ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 8ms
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#index as HTML
+Completed 500 Internal Server Error in 896ms
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+  Rendered dashing/widgets/foo/foo.html (0.2ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#index as HTML
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 8ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#index as HTML
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 9ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#index as HTML
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::DashboardsController#index as HTML
+  Rendered dashing/dashboards/foo.erb within layouts/dashing/dashboard (1.7ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 18ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 9ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#index as HTML
+Completed 200 OK in 21ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::DashboardsController#index as HTML
+  Rendered dashing/dashboards/foo.erb within layouts/dashing/dashboard (1.8ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 19ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#index as HTML
+  Rendered dashing/dashboards/foo.erb within layouts/dashing/dashboard (1.9ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Processing by Dashing::DashboardsController#show as HTML
+Completed 500 Internal Server Error in 0ms
+Processing by Dashing::DashboardsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+Completed 500 Internal Server Error in 16ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"bar"}
+Completed 500 Internal Server Error in 2ms
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+  Parameters: {"name"=>"foo"}
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#update as HTML
+Completed 500 Internal Server Error in 0ms

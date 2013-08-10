@@ -6,11 +6,11 @@ module Dashing
     rescue_from ActionView::MissingTemplate, with: :template_not_found
 
     def index
-      render nothing: true
+      render file: dashboard_path(Dashing.config.default_dashboard || Dashing.first_dashboard || ''), layout: Dashing.config.dashboard_layout
     end
 
     def show
-      render file: dashboard_path, layout: Dashing.config.dashboard_layout
+      render file: dashboard_path(params[:name]), layout: Dashing.config.dashboard_layout
     end
 
     private
@@ -19,12 +19,12 @@ module Dashing
       raise 'bad dashboard name' unless params[:name] =~ /\A[a-zA-z0-9_\-]+\z/
     end
 
-    def dashboard_path
-      Rails.root.join(Dashing.config.dashboards_path, params[:name])
+    def dashboard_path(name)
+      Rails.root.join(Dashing.config.dashboards_path, name)
     end
 
     def template_not_found
-      raise "Count not find template for dashboard #{params[:name]}. Define your dashboard in #{dashboard_path}"
+      raise "Count not find template for dashboard '#{params[:name]}'. Define your dashboard in #{dashboard_path('')}"
     end
 
   end

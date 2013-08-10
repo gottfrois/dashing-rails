@@ -21,7 +21,7 @@ describe Dashing::DashboardsController do
       get :show, params.merge(use_route: :dashing)
     end
 
-    context "when template exists" do
+    context 'when template exists' do
 
       it 'responds success' do
         action(name: 'foo')
@@ -30,7 +30,7 @@ describe Dashing::DashboardsController do
 
     end
 
-    context "when template does not exist" do
+    context 'when template does not exist' do
 
       it { expect { action }.to raise_error }
       it { expect { action(name: 'bar') }.to raise_error }

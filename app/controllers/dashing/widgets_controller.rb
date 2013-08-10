@@ -1,6 +1,7 @@
 module Dashing
   class WidgetsController < ApplicationController
 
+    before_filter :check_accessibility, only: :update
     before_filter :check_widget_name,   only: [:show, :update]
     before_filter :prepend_view_paths,  only: :show
 

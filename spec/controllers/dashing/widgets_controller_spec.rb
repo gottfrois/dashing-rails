@@ -8,7 +8,7 @@ describe Dashing::WidgetsController do
       get :show, params.merge(use_route: :dashing)
     end
 
-    context "when default template exists" do
+    context 'when default template exists' do
 
       it 'responds success' do
         action(name: 'text')
@@ -17,7 +17,7 @@ describe Dashing::WidgetsController do
 
     end
 
-    context "when template exists in main app" do
+    context 'when template exists in main app' do
 
       it 'responds success' do
         action(name: 'foo')
@@ -26,7 +26,7 @@ describe Dashing::WidgetsController do
 
     end
 
-    context "when template does not exist" do
+    context 'when template does not exist' do
 
       it { expect { action }.to raise_error }
       it { expect { action(name: 'bar') }.to raise_error }
@@ -50,7 +50,7 @@ describe Dashing::WidgetsController do
 
     end
 
-    context "when not valid" do
+    context 'when not valid' do
 
       it { expect { action }.to raise_error }
 
