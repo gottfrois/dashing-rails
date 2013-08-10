@@ -23,4 +23,5 @@
 //= require es5-shim
 //= require_tree .
 //= require dashing.gridster
+//= require default_widgets
 //= require widgets
