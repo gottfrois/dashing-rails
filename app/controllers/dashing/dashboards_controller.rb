@@ -6,6 +6,7 @@ module Dashing
     rescue_from ActionView::MissingTemplate, with: :template_not_found
 
     def index
+      render nothing: true
     end
 
     def show

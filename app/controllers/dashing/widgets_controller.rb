@@ -1,15 +1,21 @@
 module Dashing
   class WidgetsController < ApplicationController
 
-    respond_to :html
-
-    before_filter :check_widget_name,   only: :show
+    before_filter :check_widget_name,   only: [:show, :update]
     before_filter :prepend_view_paths,  only: :show
 
     rescue_from ActionView::MissingTemplate, with: :template_not_found
 
     def show
       render file: withdet_path
+    end
+
+    def update
+      data = params[:widget] || {}
+      hash = data.merge(id: params[:name], updatedAt: Time.now.utc.to_i)
+      Dashing.redis.publish("#{Dashing.config.redis_namespace}.create", hash.to_json)
+
+      render nothing: true
     end
 
     private

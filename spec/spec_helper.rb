@@ -1,6 +1,8 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('dummy/config/environment', __FILE__)
+ENV['RAILS_ENV']  ||= 'test'
+ENGINE_RAILS_ROOT   = File.join(File.dirname(__FILE__), '../')
+
+require File.expand_path(ENGINE_RAILS_ROOT + 'spec/dummy/config/environment', __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 
@@ -22,12 +24,12 @@ RSpec.configure do |config|
   # config.mock_with :rr
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  # config.use_transactional_fixtures = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of

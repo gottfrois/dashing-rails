@@ -16,11 +16,13 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'rails',                   '~> 4.0.0'
-  s.add_dependency 'jquery-rails',            '~> 3.0.4'
-  s.add_dependency 'coffee-script',           '~> 2.2.0'
-  s.add_dependency 'rufus-scheduler',         '~> 2.0.23'
-  s.add_dependency 'redis',                   '~> 3.0.4'
+  s.add_dependency 'rails',                     '~> 4.0.0'
+  s.add_dependency 'jquery-rails',              '~> 3.0.4'
+  s.add_dependency 'coffee-script',             '~> 2.2.0'
+  s.add_dependency 'rufus-scheduler',           '~> 2.0.23'
+  s.add_dependency 'redis',                     '~> 3.0.4'
 
-  s.add_development_dependency 'rspec-rails', '~> 2.0'
+  s.add_development_dependency 'rspec-rails',   '~> 2.0'
+  s.add_development_dependency 'pry-rails',     '~> 0.2.2'
+  s.add_development_dependency 'better_errors', '~> 0.8.0'
 end

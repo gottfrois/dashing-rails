@@ -20,17 +20,5 @@ module Dashing
       response.stream.close
     end
 
-    def create
-      response.headers['Content-Type'] = 'text/javascript'
-
-      Dashing.redis.publish("#{Dashing.config.redis_namespace}.create", event_params[:data].to_json)
-    end
-
-    private
-
-    def event_params
-      params.require(:event).permit(:data)
-    end
-
   end
 end

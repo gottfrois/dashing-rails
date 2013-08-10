@@ -21,22 +21,22 @@ Dashing.configure do |config|
   # CSS and JS file will be added to the asset path and the asset pipeline automatically.
   #
   # More information at http://shopify.github.io/dashing/
-  # config.view_path = '/app/views/dashing/'
+  # config.view_path = 'app/views/dashing/'
 
   # rufus-scheduler worker path
-  # config.jobs_path = '/app/jobs/'
+  # config.jobs_path = 'app/jobs/'
 
   # Engine path to use for accessing engine's routes.
   # Ex: http://your_app/dashing/dashboard/my_dashboard_name
   # config.engine_path = '/dashing'
 
   # The dashboards path used to find dashboards.
-  # config.dashboards_path = '/app/views/dashing/dashboards/'
+  # config.dashboards_path = 'app/views/dashing/dashboards/'
 
   # The Dashing layout used to display metrics.
   # config.dashboard_layout = 'dashing/dashboard'
 
   # The widgets path used to find your custom widgets.
   # Dashing provide default widgets.
-  # config.widgets_path = '/app/views/dashing/widgets/'
+  # config.widgets_path = 'app/views/dashing/widgets/'
 end

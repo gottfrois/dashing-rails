@@ -12,12 +12,12 @@ module Dashing
       @scheduler        = ::Rufus::Scheduler.new
       @redis            = ::Redis.new
       @redis_namespace  = 'dashing_events'
-      @view_path        = '/app/views/dashing/'
-      @jobs_path        = '/app/jobs/'
+      @view_path        = 'app/views/dashing/'
+      @jobs_path        = 'app/jobs/'
       @engine_path      = '/dashing'
-      @dashboards_path  = '/app/views/dashing/dashboards/'
+      @dashboards_path  = 'app/views/dashing/dashboards/'
       @dashboard_layout = 'dashing/dashboard'
-      @widgets_path     = '/app/views/dashing/widgets/'
+      @widgets_path     = 'app/views/dashing/widgets/'
     end
 
   end
