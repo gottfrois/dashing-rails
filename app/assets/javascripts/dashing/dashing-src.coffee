@@ -84,7 +84,7 @@ Dashing.AnimatedValue =
 
 Dashing.widgets = widgets = {}
 Dashing.lastEvents = lastEvents = {}
-Dashing.debugMode = true # false
+Dashing.debugMode = false
 
 source = new EventSource('/dashing/events')
 source.addEventListener 'open', (e) ->
