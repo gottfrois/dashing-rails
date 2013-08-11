@@ -32,7 +32,7 @@ Key features:
 1. Install the gem by adding the following in your `Gemfile`:
 
 		gem 'dashing-rails'
-		
+
 2. Install puma server by adding the following in your `Gemfile`:
 
 		gem 'puma'
@@ -47,11 +47,10 @@ Key features:
 
 5. Restart your server (must be a multi threaded server - See [Requirements](https://github.com/gottfrois/dashing-rails#requirements))
 
-		$ puma		
+		$ puma
 
 6. Open `config/development.rb` and add:
 
-		config.preload_frameworks = true
 		config.allow_concurrency = true
 
 7. Point your browser at [http://localhost:3000/dashing/dashboards](http://localhost:3000/dashing/dashboards) and have fun!
@@ -88,7 +87,7 @@ This job will run every minute, and will send a random number to ALL widgets tha
 You send data using the following method:
 
 	Dashing.send_event(widget_id, json_formatted_data)
-	
+
 Jobs are where you put stuff such as fetching metrics from a database, or calling a third party API like Twitter. Since the data fetch is happening in only one place, it means that all instances of widgets are in sync.
 
 [Server Sent Events](http://www.html5rocks.com/en/tutorials/eventsource/basics/) are used in order to stream data to the dashboards.
@@ -102,15 +101,15 @@ This way you can have a seperate Rails 4 application (with puma) running your da
 You can specify Dashing redis connection in `config/initializers/dashing.rb`:
 
 	config.redis = your_redis_instance
-	
+
 By default Dashing subscribed to the following namespace in redis:
 
 	dashing_events.*
-	
+
 where `*` can be anything. This give you all the flexibility you need to push to redis. For example the `send_event` method provided by Dashing uses the following namespace:
 
 	redis.publish("dashing_events.create", {})
-	
+
 You can configure the redis namespace in `config/initializers/dashing.rb`:
 
 	config.redis_namespace = 'your_redis_namespace'
@@ -124,12 +123,12 @@ Your widgets can be updated directly over HTTP. Post the data you want in json t
 Example:
 
 	curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 100 }' http://localhost:3000/dashing/widgets/karma
-	
+
 or
 
 	HTTParty.post('http://localhost:3000/dashing/widgets/karma',
 	  body: { auth_token: "YOUR_AUTH_TOKEN", current: 1000 }.to_json)
-	  
+
 #### Dasboards
 
 The `reload` action provided by [Shopify Dashing](http://shopify.github.io/dashing/) is currently not available.
