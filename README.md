@@ -48,11 +48,15 @@ Key features:
 
 		$ puma
 
-6. Open `config/development.rb` and add:
+6. Start redis server:
+
+		$ redis-server
+
+7. Open `config/development.rb` and add:
 
 		config.allow_concurrency = true
 
-7. Point your browser at [http://0.0.0.0:9292/dashing/dashboards](http://0.0.0.0:9292/dashing/dashboards) and have fun!
+8. Point your browser at [http://0.0.0.0:9292/dashing/dashboards](http://0.0.0.0:9292/dashing/dashboards) and have fun!
 
 
 **Important Note:** *We need to update the configuration in development to handle multiple requests at the same time. One request for the page we’re working on, and another request for the SSE controller.*
