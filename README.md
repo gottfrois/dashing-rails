@@ -52,7 +52,7 @@ Key features:
 
 		config.allow_concurrency = true
 
-7. Point your browser at [http://localhost:3000/dashing/dashboards](http://localhost:3000/dashing/dashboards) and have fun!
+7. Point your browser at [http://0.0.0.0:9292/dashing/dashboards](http://0.0.0.0:9292/dashing/dashboards) and have fun!
 
 
 **Important Note:** *We need to update the configuration in development to handle multiple requests at the same time. One request for the page we’re working on, and another request for the SSE controller.*
@@ -121,11 +121,11 @@ Your widgets can be updated directly over HTTP. Post the data you want in json t
 
 Example:
 
-	curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 100 }' http://localhost:3000/dashing/widgets/karma
+	curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 100 }' http://0.0.0.0:9292/dashing/widgets/karma
 
 or
 
-	HTTParty.post('http://localhost:3000/dashing/widgets/karma',
+	HTTParty.post('http://0.0.0.0:9292/dashing/widgets/karma',
 	  body: { auth_token: "YOUR_AUTH_TOKEN", current: 1000 }.to_json)
 
 #### Dasboards
