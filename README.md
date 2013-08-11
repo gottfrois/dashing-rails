@@ -30,7 +30,7 @@ Key features:
 
 1. Install the gem by adding the following in your `Gemfile`:
 
-		gem 'dashing-rails', require: 'dashing'
+		gem 'dashing-rails'
 
 2. Install puma server by adding the following in your `Gemfile`:
 
