@@ -2,9 +2,6 @@
 ENV['RAILS_ENV']  ||= 'test'
 ENGINE_RAILS_ROOT   = File.join(File.dirname(__FILE__), '../')
 
-require 'coveralls'
-Coveralls.wear!
-
 require File.expand_path(ENGINE_RAILS_ROOT + 'spec/dummy/config/environment', __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
