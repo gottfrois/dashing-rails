@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dashing (1.0.0)
+    dashing-rails (1.0.0)
       coffee-script (~> 2.2.0)
       jquery-rails (~> 3.0.4)
       rails (~> 4.0.0)
@@ -125,7 +125,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors (~> 0.8.0)
-  dashing!
+  dashing-rails!
   jquery-rails (~> 3.0.4)
   pry-rails (~> 0.2.2)
   rspec-rails (~> 2.0)
