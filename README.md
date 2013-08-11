@@ -24,33 +24,45 @@ Key features:
 
 * Rails 4
 * Redis
-* Multi Threaded server ([puma](https://github.com/puma/puma), [thin](http://code.macournoyer.com/thin/), [rainbows](http://rainbows.rubyforge.org/))
+* Multi Threaded server ([puma](https://github.com/puma/puma), [rainbows](http://rainbows.rubyforge.org/))
+
 
 ## Getting Started
 
 1. Install the gem by adding the following in your `Gemfile`:
 
 		gem 'dashing-rails'
+		
+2. Install puma server by adding the following in your `Gemfile`:
 
-2. Bundle install
+		gem 'puma'
+
+3. Bundle install
 
 		$ bundle
 
-3. Install the dependecies using the following command:
+4. Install the dependecies using the following command:
 
 		$ rails g dashing:install
 
-4. Restart your server (must be a multi threaded server - See [Requirements](https://github.com/gottfrois/dashing-rails#requirements))
+5. Restart your server (must be a multi threaded server - See [Requirements](https://github.com/gottfrois/dashing-rails#requirements))
 
-		$ thin start
+		$ puma		
 
-5. Point your browser at [http://localhost:3000/dashing/dashboards](http://localhost:3000/dashing/dashboards) and have fun!
+6. Open `config/development.rb` and add:
+
+		config.preload_frameworks = true
+		config.allow_concurrency = true
+
+7. Point your browser at [http://localhost:3000/dashing/dashboards](http://localhost:3000/dashing/dashboards) and have fun!
+
+
+**Important Note:** *We need to update the configuration in development to handle multiple requests at the same time. One request for the page we’re working on, and another request for the SSE controller.*
 
 - - -
 
 Every new Dashing project comes with sample widgets & sample dashboards for you to explore. The directory is setup as follows:
 
-* **Assets** — All your images, fonts, and js/coffeescript libraries.
 * `app/views/dashing/dashboards` — One .erb file for each dashboard that contains the layout for the widgets.
 * `app/jobs` — Your ruby jobs for fetching data (e.g for calling third party APIs like twitter).
 * `app/views/dashing/widgets` — All the html/css/coffee for individual widgets.
@@ -80,6 +92,28 @@ You send data using the following method:
 Jobs are where you put stuff such as fetching metrics from a database, or calling a third party API like Twitter. Since the data fetch is happening in only one place, it means that all instances of widgets are in sync.
 
 [Server Sent Events](http://www.html5rocks.com/en/tutorials/eventsource/basics/) are used in order to stream data to the dashboards.
+
+### Redis
+
+Dashing uses [Redis](http://redis.io/) to push and pull data and feed your widgets. Since Dashing [Requirements](https://github.com/gottfrois/dashing-rails#requirements) can be quite frustrating, I thought it might be useful to use redis.
+
+This way you can have a seperate Rails 4 application (with puma) running your dashboards and push your data to redis from your main Rails 3 application for example.
+
+You can specify Dashing redis connection in `config/initializers/dashing.rb`:
+
+	config.redis = your_redis_instance
+	
+By default Dashing subscribed to the following namespace in redis:
+
+	dashing_events.*
+	
+where `*` can be anything. This give you all the flexibility you need to push to redis. For example the `send_event` method provided by Dashing uses the following namespace:
+
+	redis.publish("dashing_events.create", {})
+	
+You can configure the redis namespace in `config/initializers/dashing.rb`:
+
+	config.redis_namespace = 'your_redis_namespace'
 
 ### API
 
