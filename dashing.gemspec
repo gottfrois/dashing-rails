@@ -5,11 +5,11 @@ require 'dashing/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'dashing'
+  s.name        = 'dashing-rails'
   s.version     = Dashing::VERSION
   s.authors     = ['Pierre-Louis Gottfrois']
   s.email       = ['pierrelouis.gottfrois@gmail.com']
-  s.homepage    = ''
+  s.homepage    = 'https://github.com/gottfrois/dashing-rails'
   s.summary     = 'The exceptionally handsome dashboard framework for Rails.'
   s.description = 'The exceptionally handsome dashboard framework for Rails.'
 
