@@ -47,4 +47,8 @@ Dashing.configure do |config|
   # Put nil if you don't want to use authentication.
   # You can use SecureRandom.hex to generate a hex.
   # config.auth_token = nil
+
+  # List of Devise models that should access the whole dashboard.
+  # List the models. E.g: '[ "User", "Admin" ]'
+  # config.devise_allowed_models = []
 end
