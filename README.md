@@ -162,7 +162,7 @@ All contributions are more than welcome; especially new widgets!
 
 Please add spec to your Pull Requests and run them using:
 
-		rake
+	rake
 
 You can use the following [demo application](https://github.com/gottfrois/dashing-rails-demo) to test dashing-rails in development.
 
