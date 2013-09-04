@@ -160,6 +160,12 @@ Does not work in Internet Explorer because it relies on [Server Sent Events](htt
 
 All contributions are more than welcome; especially new widgets!
 
+Please add spec to your Pull Requests and run them using:
+
+		rake
+
+You can use the following [demo application](https://github.com/gottfrois/dashing-rails-demo) to test dashing-rails in development.
+
 ## License
 
 Dashing is released under the [MIT license](https://github.com/Shopify/dashing/blob/master/MIT-LICENSE)
