@@ -49,6 +49,6 @@ Dashing.configure do |config|
   # config.auth_token = nil
 
   # List of Devise models that should access the whole dashboard.
-  # List the models. E.g: '[ "User", "Admin" ]'
+  # List the models. E.g: '[ :user, :admin ]'
   # config.devise_allowed_models = []
 end

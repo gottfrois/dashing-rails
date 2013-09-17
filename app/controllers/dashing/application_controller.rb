@@ -7,7 +7,7 @@ module Dashing
 
     def authentication_with_devise
       Dashing.config.devise_allowed_models.each do |model|
-        self.send('authenticate_'+model.downcase+'!')
+        self.send("authenticate_#{model.to_s}!")
       end
     end
 
