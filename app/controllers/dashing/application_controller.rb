@@ -1,7 +1,15 @@
 module Dashing
   class ApplicationController < ActionController::Base
 
+    before_filter :authentication_with_devise
+
     private
+
+    def authentication_with_devise
+      Dashing.config.devise_allowed_models.each do |model|
+        self.send('authenticate_'+model.downcase+'!')
+      end
+    end
 
     def check_accessibility
       auth_token = params.delete(:auth_token)
