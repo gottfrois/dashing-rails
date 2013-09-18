@@ -17,4 +17,31 @@ describe Dashing::Configuration do
   it { expect(instance.auth_token).to             be_nil }
   it { expect(instance.devise_allowed_models).to  be_empty }
 
+  describe '#request_thread_count' do
+
+    context 'when puma respond to cli_config' do
+
+      let(:value) { 2 }
+
+      before do
+        Object.const_set('Puma', Class.new)
+        ::Puma.stub_chain(:cli_config, :options).and_return(max_threads: value)
+      end
+
+      after do
+        Object.send(:remove_const, 'Puma') if defined?(Puma)
+      end
+
+      it { expect(instance.send(:request_thread_count)).to eq(value) }
+
+    end
+
+    context 'by default' do
+
+      it { expect(instance.send(:request_thread_count)).to eq(5) }
+
+    end
+
+  end
+
 end
