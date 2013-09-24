@@ -3,6 +3,7 @@ PATH
   specs:
     dashing-rails (1.0.1)
       coffee-script (~> 2.2.0)
+      connection_pool (~> 1.1.0)
       jquery-rails (~> 3.0.4)
       rails (~> 4.0.0)
       redis (~> 3.0.4)
@@ -46,10 +47,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    connection_pool (1.1.0)
     diff-lcs (1.2.4)
     erubis (2.7.0)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
+    execjs (2.0.1)
     hike (1.2.3)
     i18n (0.6.4)
     jquery-rails (3.0.4)
@@ -59,7 +60,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     method_source (0.8.2)
-    mime-types (1.23)
+    mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.7.7)
     polyglot (0.3.3)
@@ -98,8 +99,8 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    rufus-scheduler (2.0.23)
-      tzinfo (>= 0.3.23)
+    rufus-scheduler (2.0.24)
+      tzinfo (>= 0.3.22)
     slop (3.4.6)
     sprockets (2.10.0)
       hike (~> 1.2)
@@ -115,7 +116,7 @@ GEM
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
-    treetop (1.4.14)
+    treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)

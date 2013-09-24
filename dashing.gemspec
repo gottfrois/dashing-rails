@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'coffee-script',             '~> 2.2.0'
   s.add_dependency 'rufus-scheduler',           '~> 2.0.23'
   s.add_dependency 'redis',                     '~> 3.0.4'
+  s.add_dependency 'connection_pool',           '~> 1.1.0'
 
   s.add_development_dependency 'rspec-rails',   '~> 2.0'
   s.add_development_dependency 'pry-rails',     '~> 0.2.2'

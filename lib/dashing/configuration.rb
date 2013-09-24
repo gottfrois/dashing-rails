@@ -1,5 +1,6 @@
 require 'rufus-scheduler'
 require 'redis'
+require 'connection_pool'
 
 module Dashing
   class Configuration
@@ -10,7 +11,7 @@ module Dashing
 
     def initialize
       @scheduler              = ::Rufus::Scheduler.new
-      @redis                  = ::Redis.new
+      @redis                  = ::ConnectionPool::Wrapper.new(size: request_thread_count, timeout: 3) { ::Redis.connect }
       @redis_namespace        = 'dashing_events'
       @view_path              = 'app/views/dashing/'
       @jobs_path              = 'app/jobs/'
@@ -23,5 +24,14 @@ module Dashing
       @devise_allowed_models  = []
     end
 
+    private
+
+    def request_thread_count
+      if defined?(::Puma) && ::Puma.respond_to?(:cli_config)
+        ::Puma.cli_config.options.fetch(:max_threads, 5)
+      else
+        5
+      end
+    end
   end
 end
