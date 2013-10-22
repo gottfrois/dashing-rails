@@ -11,12 +11,11 @@ gemspec
 # your gem to rubygems.org.
 
 gem 'sqlite3'
-gem 'jquery-rails', '~> 3.0.4'
-
-# To use debugger
-# gem 'debugger'
+gem 'jquery-rails', '~> 3.0'
 
 group :test do
-  gem 'rspec-rails', '~> 2.0'
-  gem 'pry-rails',   '~> 0.2.2'
+  gem 'coveralls',  require: false
+  gem 'simplecov',  require: false
+  gem 'rspec-rails', '~> 2.14'
+  gem 'pry-rails',   '~> 0.3'
 end

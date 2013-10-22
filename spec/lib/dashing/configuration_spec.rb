@@ -4,7 +4,7 @@ describe Dashing::Configuration do
 
   let(:instance) { Dashing::Configuration.new }
 
-  it { expect(instance.scheduler).to              be_a(::Rufus::Scheduler::PlainScheduler) }
+  it { expect(instance.scheduler).to              be_a(::Rufus::Scheduler) }
   it { expect(instance.redis).to                  be_a(::Redis) }
   it { expect(instance.redis_namespace).to        eq('dashing_events') }
   it { expect(instance.view_path).to              eq('app/views/dashing/') }
