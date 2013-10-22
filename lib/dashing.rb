@@ -10,7 +10,7 @@ module Dashing
     end
 
     def configure
-      yield config
+      yield config if block_given?
     end
 
     def first_dashboard

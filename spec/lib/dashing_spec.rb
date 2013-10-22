@@ -18,9 +18,21 @@ describe Dashing do
       Dashing.stub(:config).and_return(:configuration)
     end
 
-    it 'yields configuration' do
-      Dashing.should_receive(:configure).and_yield(configuration)
-      Dashing.configure {|config|}
+    context 'when block given' do
+
+      it 'yields configuration' do
+        Dashing.should_receive(:configure).and_yield(configuration)
+        Dashing.configure {|config|}
+      end
+
+    end
+
+    context 'when no block given' do
+
+      it 'does nothing' do
+        Dashing.configure.should be_nil
+      end
+
     end
 
   end
