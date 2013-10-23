@@ -23,6 +23,7 @@ Key features:
 
 ## Requirements
 
+* Ruby >=1.9.3
 * Rails 4
 * Redis
 * Multi Threaded server ([puma](https://github.com/puma/puma), [rainbows](http://rainbows.rubyforge.org/))
