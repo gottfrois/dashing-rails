@@ -104,9 +104,11 @@ Dashing uses [Redis](http://redis.io/) to push and pull data and feed your widge
 
 This way you can have a seperate Rails 4 application (with puma) running your dashboards and push your data to redis from your main Rails 3 application for example.
 
-You can specify Dashing redis connection in `config/initializers/dashing.rb`:
+You can specify Dashing redis credentials in `config/initializers/dashing.rb`:
 
-	config.redis = your_redis_instance
+	config.redis_host 		= '127.0.0.1'
+	config.redis_port 		= '6379'
+	config.redis_password = '123456'
 
 By default Dashing subscribed to the following namespace in redis:
 

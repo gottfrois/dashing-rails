@@ -6,6 +6,9 @@ describe Dashing::Configuration do
 
   it { expect(instance.scheduler).to              be_a(::Rufus::Scheduler) }
   it { expect(instance.redis).to                  be_a(::Redis) }
+  it { expect(instance.redis_host).to             eq('127.0.0.1') }
+  it { expect(instance.redis_port).to             eq('6379') }
+  it { expect(instance.redis_password).to         be_nil }
   it { expect(instance.redis_namespace).to        eq('dashing_events') }
   it { expect(instance.view_path).to              eq('app/views/dashing/') }
   it { expect(instance.jobs_path).to              eq('app/jobs/') }
