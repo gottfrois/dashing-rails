@@ -5,7 +5,6 @@ describe Dashing::Configuration do
   let(:instance) { Dashing::Configuration.new }
 
   it { expect(instance.scheduler).to              be_a(::Rufus::Scheduler) }
-  it { expect(instance.redis).to                  be_a(::Redis) }
   it { expect(instance.redis_host).to             eq('127.0.0.1') }
   it { expect(instance.redis_port).to             eq('6379') }
   it { expect(instance.redis_password).to         be_nil }
@@ -19,6 +18,8 @@ describe Dashing::Configuration do
   it { expect(instance.default_dashboard).to      be_nil }
   it { expect(instance.auth_token).to             be_nil }
   it { expect(instance.devise_allowed_models).to  be_empty }
+
+  it { expect(instance.redis).to                  be_a(::Redis) }
 
   describe '#request_thread_count' do
 
