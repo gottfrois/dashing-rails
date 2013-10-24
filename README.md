@@ -155,6 +155,47 @@ Tested in Chrome, Safari 6+, and Firefox 15+.
 
 Does not work in Internet Explorer because it relies on [Server Sent Events](http://www.html5rocks.com/en/tutorials/eventsource/basics/).
 
+## Heroku
+
+Setting Dashing-rails on Heroku is pretty simple:
+
+1. Create a new app:
+
+		heroku apps:create example
+		
+2. Add [RedisToGo](https://devcenter.heroku.com/articles/redistogo) addon to heroku's app:
+
+		heroku addons:add redistogo
+		
+3. Add [PostgresSQL](https://devcenter.heroku.com/articles/heroku-postgresql) addon to heroku's app (this is up to you):
+
+		heroku addons:add heroku-postgresql:dev
+		
+4. Add `puma` to your `Gemfile`:
+
+		gem 'puma'
+		
+5. Create a new `Procfile` for you application:
+
+		web: bundle exec puma -p $PORT -e $RACK_ENV -t 0:5
+
+6. Tell Dashing-rails how to you the Heroku's redis connection by setting redis credentials in `config/initializers/dashing.rb`:
+
+		config.redis_host     = URI.parse(ENV["REDISTOGO_URL"]).host
+		config.redis_port     = URI.parse(ENV["REDISTOGO_URL"]).port
+		config.redis_password = URI.parse(ENV["REDISTOGO_URL"]).password
+		
+7. Commit and Push to heroku:
+
+		git commit -m "configure dashing to work on heroku"
+		git push heroku master
+	
+8. That's it! Visit [http://your_app.herokuapp.com/dashing/dashboards](http://dashing-rails-demo.herokuapp.com/dashing/dashboards)
+		
+You can checkout the following application on [Github](https://github.com/gottfrois/dashing-rails-demo) running on [Heroku](http://dashing-rails-demo.herokuapp.com/dashing/dashboards)
+		
+*`puma -t 0:5` lets you configure the number of threads you want puma to run on.*
+
 ## Contributors
 
 [Shopify Dashing official page](http://shopify.github.io/dashing/)
