@@ -3,8 +3,11 @@ Dashing.configure do |config|
   # Scheduler instance.
   # config.scheduler = ::Rufus::Scheduler.new
 
-  # Redis instance.
-  # config.redis = ::Redis.new
+  # Redis credentials.
+  # See https://devcenter.heroku.com/articles/redistogo to configure redis for heroku.
+  # config.redis_host     = '127.0.0.1'
+  # config.redis_port     = '6379'
+  # config.redis_password = nil
 
   # Redis namespace when pushing new data.
   # config.redis_namespace = 'dashing_events'
