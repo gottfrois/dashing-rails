@@ -16,10 +16,10 @@
 //= require jquery.leanModal.min
 //= require jquery.timeago
 //= require moment.min
-//= require rickshaw.min
+//= require rickshaw-1.4.3.min
 //= require batman
 //= require batman.jquery
-//= require d3.v2.min
+//= require d3-3.2.8.min
 //= require es5-shim
 //= require_tree .
 //= require dashing.gridster
