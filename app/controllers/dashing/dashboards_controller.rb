@@ -6,11 +6,11 @@ module Dashing
     rescue_from ActionView::MissingTemplate, with: :template_not_found
 
     def index
-      render file: dashboard_path(Dashing.config.default_dashboard || Dashing.first_dashboard || ''), layout: Dashing.config.dashboard_layout
+      render file: dashboard_path(Dashing.config.default_dashboard || Dashing.first_dashboard || ''), layout: Dashing.config.dashboard_layout_path
     end
 
     def show
-      render file: dashboard_path(params[:name]), layout: Dashing.config.dashboard_layout
+      render file: dashboard_path(params[:name]), layout: Dashing.config.dashboard_layout_path
     end
 
     private
@@ -20,7 +20,7 @@ module Dashing
     end
 
     def dashboard_path(name)
-      Rails.root.join(Dashing.config.dashboards_path, name)
+      Rails.root.join(Dashing.config.dashboards_views_path, name)
     end
 
     def template_not_found

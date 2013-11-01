@@ -39,8 +39,8 @@ describe Dashing do
 
   describe '.first_dashboard' do
 
-    let(:dir) { 'foo' }
-    let(:dirs) { [dir] }
+    let(:dir)   { 'foo' }
+    let(:dirs)  { [dir] }
 
     before do
       Dir.stub(:[]).and_return(dirs)

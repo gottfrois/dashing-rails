@@ -14,7 +14,7 @@ module Dashing
     end
 
     def first_dashboard
-      files = Dir[Rails.root.join(config.dashboards_path, '*')].collect { |f| File.basename(f, '.*') }
+      files = Dir[Rails.root.join(config.dashboards_views_path, '*')].collect { |f| File.basename(f, '.*') }
       files.sort.first
     end
 

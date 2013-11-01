@@ -10,7 +10,15 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require dashing
-//= require_tree .
-//= require dashing.gridster
-//= require widgets
+//= require jquery
+//= require jquery.gridster
+//= require jquery.knob
+//= require jquery.leanModal.min
+//= require jquery.timeago
+//= require moment.min
+//= require rickshaw-1.4.3.min
+//= require batman
+//= require batman.jquery
+//= require d3-3.2.8.min
+//= require es5-shim
+//= require dashing-src

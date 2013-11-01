@@ -19,8 +19,8 @@ module Dashing
       end
 
       def copy_widget_manifests
-        template 'widgets/index.css', 'app/views/dashing/widgets/index.css'
-        template 'widgets/index.js', 'app/views/dashing/widgets/index.js'
+        template 'widgets/index.css', 'app/assets/stylesheets/dashing/widgets/index.css'
+        template 'widgets/index.js', 'app/assets/javascripts/dashing/widgets/index.js'
       end
 
       def copy_job

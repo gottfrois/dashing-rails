@@ -7,6 +7,8 @@
 Dashing-rails is the Rails Engine version of [Dashing by Shopify](http://shopify.github.io/dashing/).
 A huge thanks to Shopify for their great work with the Sinatra version.
 
+**Warning**: To upgrade from `1.x.x` to `2.x.x` you need to run `rails g dashing:install`. Please read `CHANGELOG.md` for more details.
+
 ## Introduction
 
 Dashing is a Rails engine that lets you build beautiful dashboards.
@@ -33,11 +35,11 @@ Key features:
 
 1. Install the gem by adding the following in your `Gemfile`:
 
-		gem 'dashing-rails'
+        gem 'dashing-rails'
 
 2. Install puma server by adding the following in your `Gemfile`:
 
-		gem 'puma'
+    	gem 'puma'
 
 3. Bundle install
 
@@ -47,17 +49,17 @@ Key features:
 
 		$ rails g dashing:install
 
-5. Restart your server (must be a multi threaded server - See [Requirements](https://github.com/gottfrois/dashing-rails#requirements))
+5. Start redis server:
 
-		$ puma
+    	$ redis-server
 
-6. Start redis server:
-
-		$ redis-server
-
-7. Open `config/development.rb` and add:
+6. Open `config/development.rb` and add:
 
 		config.allow_concurrency = true
+
+7. Start your server (must be a multi threaded server - See [Requirements](https://github.com/gottfrois/dashing-rails#requirements))
+
+    	$ rails s
 
 8. Point your browser at [http://0.0.0.0:9292/dashing/dashboards](http://0.0.0.0:9292/dashing/dashboards) and have fun!
 
@@ -70,7 +72,8 @@ Every new Dashing project comes with sample widgets & sample dashboards for you 
 
 * `app/views/dashing/dashboards` — One .erb file for each dashboard that contains the layout for the widgets.
 * `app/jobs` — Your ruby jobs for fetching data (e.g for calling third party APIs like twitter).
-* `app/views/dashing/widgets` — All the html/css/coffee for individual widgets.
+* `app/assets/javascripts/dashing/widgets/` — One folder with widget's name containing a JS file.
+* `app/assets/stylesheets/dashing/widgets/` — One folder with widget's name containing a CSS file.
 * `app/views/layouts/dashing/` — All your custom layouts where your dashboards and widgets will be included.
 
 ## Getting Data Into Your Widgets
@@ -84,11 +87,11 @@ Dashing uses [rufus-scheduler](http://rufus.rubyforge.org/rufus-scheduler/) to s
 Example:
 
 	# :first_in sets how long it takes before the job is first run. In this case, it is run immediately
-	Dashing.scheduler.every '1m', :first_in => 0 do |job|
+	Dashing.scheduler.every '1m', first_in: 0 do |job|
 	  Dashing.send_event('karma', { current: rand(1000) })
 	end
 
-This job will run every minute, and will send a random number to ALL widgets that have `data-id` set to 'karma'.
+This job will run every minute, and will send a random number to ALL widgets that have `data-id` set to `"karma"`.
 
 You send data using the following method:
 
@@ -130,24 +133,38 @@ Your widgets can be updated directly over HTTP. Post the data you want in json t
 
 Example:
 
-	curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 100 }' http://0.0.0.0:9292/dashing/widgets/karma
+	curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 100 }' http://locahost:3000/dashing/widgets/karma
 
 or
 
-	HTTParty.post('http://0.0.0.0:9292/dashing/widgets/karma',
+	HTTParty.post('http://locahost:3000/dashing/widgets/karma',
 	  body: { auth_token: "YOUR_AUTH_TOKEN", current: 1000 }.to_json)
 
 #### Dasboards
 
 The `reload` action provided by [Shopify Dashing](http://shopify.github.io/dashing/) is currently not available.
 
+## Create a new Widget
+
+In order to create or add a custom widget to dashing-rails, simply follow the following steps:
+
+1. Run
+
+        $ rails g dashing:widget my_widget
+
+2. Edit `app/views/dashing/widgets/my_widget.html`
+
+3. Edit `app/assets/javascripts/dashing/widgets/my_widget.coffee`
+
+4. Edit `app/assets/stylesheets/dashing/widgets/my_widget.scss`
+
+You can also install pre-package widget compatible with dashing-rails. Here is [a list of all Dashing-Rails compatible Widgets](https://github.com/gottfrois/dashing-rails/wiki).
+
+*Note: the paths may be different depending on your dashing-rails configuration. Check your `config/initializers/dashing.rb` file.*
+
 ## Additional Resources
 
-Check out the [wiki](https://github.com/gottfrois/dashing-rails/wiki) for interesting tips such as hosting on Heroku, or adding authentication.
-
-For more information on Dashboards and Widgets HTML/CSS/JS, please read [Shopify Dashing documentation](http://shopify.github.io/dashing).
-
-Be sure to look at the [list of third party widgets](https://github.com/Shopify/dashing/wiki/Additional-Widgets).
+Check out the [wiki](https://github.com/gottfrois/dashing-rails/wiki) for interesting tips such as hosting on Heroku, adding authentication or adding custom widgets.
 
 ## Browser Compatibility
 
@@ -155,62 +172,17 @@ Tested in Chrome, Safari 6+, and Firefox 15+.
 
 Does not work in Internet Explorer because it relies on [Server Sent Events](http://www.html5rocks.com/en/tutorials/eventsource/basics/).
 
-## Heroku
-
-Setting Dashing-rails on Heroku is pretty simple:
-
-1. Create a new app:
-
-		heroku apps:create example
-		
-2. Add [RedisToGo](https://devcenter.heroku.com/articles/redistogo) addon to heroku's app:
-
-		heroku addons:add redistogo
-		
-3. Add [PostgresSQL](https://devcenter.heroku.com/articles/heroku-postgresql) addon to heroku's app (this is up to you):
-
-		heroku addons:add heroku-postgresql:dev
-		
-4. Add `puma` to your `Gemfile`:
-
-		gem 'puma'
-		
-5. Create a new `Procfile` for you application:
-
-		web: bundle exec puma -p $PORT -e $RACK_ENV -t 0:5
-
-6. Tell Dashing-rails how to you the Heroku's redis connection by setting redis credentials in `config/initializers/dashing.rb`:
-
-		config.redis_host     = URI.parse(ENV["REDISTOGO_URL"]).host
-		config.redis_port     = URI.parse(ENV["REDISTOGO_URL"]).port
-		config.redis_password = URI.parse(ENV["REDISTOGO_URL"]).password
-		
-7. Commit and Push to heroku:
-
-		git commit -m "configure dashing to work on heroku"
-		git push heroku master
-	
-8. That's it! Visit [http://your_app.herokuapp.com/dashing/dashboards](http://dashing-rails-demo.herokuapp.com/dashing/dashboards)
-		
-You can checkout the following application on [Github](https://github.com/gottfrois/dashing-rails-demo) running on [Heroku](http://dashing-rails-demo.herokuapp.com/dashing/dashboards)
-		
-*`puma -t 0:5` lets you configure the number of threads you want puma to run on.*
-
 ## Contributors
 
-[Shopify Dashing official page](http://shopify.github.io/dashing/)
-
-[Dashing-rails contributors](https://github.com/gottfrois/dashing-rails/contributors)
-
-[Shopify Dashing contributors](https://github.com/Shopify/dashing/graphs/contributors)
+* [Shopify Dashing official page](http://shopify.github.io/dashing/)
+* [Dashing-rails contributors](https://github.com/gottfrois/dashing-rails/contributors)
+* [Shopify Dashing contributors](https://github.com/Shopify/dashing/graphs/contributors)
 
 All contributions are more than welcome; especially new widgets!
 
 Please add spec to your Pull Requests and run them using:
 
-	rake
-
-You can use the following [demo application](https://github.com/gottfrois/dashing-rails-demo) to test dashing-rails in development.
+	$ rake
 
 ## License
 

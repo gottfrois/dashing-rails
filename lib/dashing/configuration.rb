@@ -6,30 +6,47 @@ module Dashing
   class Configuration
 
     attr_reader   :redis
-    attr_accessor :scheduler, :view_path, :jobs_path, :redis_namespace,
-                  :engine_path, :dashboards_path, :dashboard_layout,
-                  :widgets_path, :default_dashboard, :auth_token, :devise_allowed_models,
-                  :redis_host, :redis_port, :redis_password
+    attr_accessor :redis_host, :redis_port, :redis_password, :redis_namespace
+    attr_accessor :auth_token, :devise_allowed_models
+    attr_accessor :jobs_path
+    attr_accessor :default_dashboard, :dashboards_views_path, :dashboard_layout_path
+    attr_accessor :widgets_views_path, :widgets_js_path, :widgets_css_path
+    attr_accessor :engine_path, :scheduler
 
     def initialize
+      @engine_path            = '/dashing'
       @scheduler              = ::Rufus::Scheduler.new
+
+      # Redis
       @redis_host             = '127.0.0.1'
       @redis_port             = '6379'
       @redis_password         = nil
       @redis_namespace        = 'dashing_events'
-      @view_path              = 'app/views/dashing/'
-      @jobs_path              = 'app/jobs/'
-      @engine_path            = '/dashing'
-      @dashboards_path        = 'app/views/dashing/dashboards/'
-      @dashboard_layout       = 'dashing/dashboard'
-      @widgets_path           = 'app/views/dashing/widgets/'
-      @default_dashboard      = nil
+
+      # Authorization
       @auth_token             = nil
       @devise_allowed_models  = []
+
+      # Jobs
+      @jobs_path              = 'app/jobs/'
+
+      # Dashboards
+      @default_dashboard      = nil
+      @dashboards_views_path  = 'app/views/dashing/dashboards/'
+      @dashboard_layout_path  = 'dashing/dashboard'
+
+      # Widgets
+      @widgets_views_path     = 'app/views/dashing/widgets/'
+      @widgets_js_path        = 'app/assets/javascripts/dashing'
+      @widgets_css_path       = 'app/assets/stylesheets/dashing'
     end
 
     def redis
-      @redis ||= ::ConnectionPool::Wrapper.new(size: request_thread_count, timeout: 3) { ::Redis.new(host: redis_host, port: redis_port, password: redis_password) }
+      @redis ||= ::ConnectionPool::Wrapper.new(size: request_thread_count, timeout: 3) { new_redis_connection }
+    end
+
+    def new_redis_connection
+      ::Redis.new(host: redis_host, port: redis_port, password: redis_password)
     end
 
     private

@@ -1,3 +1,11 @@
+## 2.0.0
+
+* Refactor assets management. Now they all live in `vendor` directory.
+* Introduce a widget generator to build custom widget in a few seconds (`rails g dashing:widget my_widget`).
+* Rename configuration attributes (you need to regenerate the initializer config file with `rails g dashing:install`)
+* Simplify widget view path
+* Bug fixes
+
 ## 1.0.3
 
 * cherrypick https://github.com/Shopify/dashing/pull/253

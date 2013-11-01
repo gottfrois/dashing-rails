@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount Dashing::Engine => "/dashing"
+  mount Dashing::Engine, at: Dashing.config.engine_path
 end

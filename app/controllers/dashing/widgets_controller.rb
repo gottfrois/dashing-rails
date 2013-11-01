@@ -26,20 +26,15 @@ module Dashing
     end
 
     def withdet_path
-      "#{params[:name]}/#{params[:name]}"
+      params[:name]
     end
 
     def prepend_view_paths
-      prepend_view_path engine_view_path
       prepend_view_path main_app_view_path
     end
 
-    def engine_view_path
-      Dashing::Engine.root.join('app', 'views', 'dashing', 'default_widgets')
-    end
-
     def main_app_view_path
-      Rails.root.join(Dashing.config.widgets_path)
+      Rails.root.join(Dashing.config.widgets_views_path)
     end
 
     def template_not_found
