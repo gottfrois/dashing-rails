@@ -45,23 +45,23 @@ Key features:
 
 3. Bundle install
 
-    $ bundle
+        $ bundle
 
 4. Install the dependecies using the following command:
 
-    $ rails g dashing:install
+        $ rails g dashing:install
 
 5. Start redis server:
 
-      $ redis-server
+        $ redis-server
 
 6. Open `config/development.rb` and add:
 
-    config.allow_concurrency = true
+        config.allow_concurrency = true
 
 7. Start your server (must be a multi threaded server - See [Requirements](https://github.com/gottfrois/dashing-rails#requirements))
 
-      $ rails s
+        $ rails s
 
 8. Point your browser at [http://0.0.0.0:9292/dashing/dashboards](http://0.0.0.0:9292/dashing/dashboards) and have fun!
 
@@ -88,16 +88,16 @@ Dashing uses [rufus-scheduler](http://rufus.rubyforge.org/rufus-scheduler/) to s
 
 Example:
 
-  # :first_in sets how long it takes before the job is first run. In this case, it is run immediately
-  Dashing.scheduler.every '1m', first_in: 0 do |job|
-    Dashing.send_event('karma', { current: rand(1000) })
-  end
+        # :first_in sets how long it takes before the job is first run. In this case, it is run immediately
+        Dashing.scheduler.every '1m', first_in: 0 do |job|
+          Dashing.send_event('karma', { current: rand(1000) })
+        end
 
 This job will run every minute, and will send a random number to ALL widgets that have `data-id` set to `"karma"`.
 
 You send data using the following method:
 
-  Dashing.send_event(widget_id, json_formatted_data)
+        Dashing.send_event(widget_id, json_formatted_data)
 
 Jobs are where you put stuff such as fetching metrics from a database, or calling a third party API like Twitter. Since the data fetch is happening in only one place, it means that all instances of widgets are in sync.
 
@@ -111,21 +111,21 @@ This way you can have a seperate Rails 4 application (with puma) running your da
 
 You can specify Dashing redis credentials in `config/initializers/dashing.rb`:
 
-  config.redis_host     = '127.0.0.1'
-  config.redis_port     = '6379'
-  config.redis_password = '123456'
+        config.redis_host     = '127.0.0.1'
+        config.redis_port     = '6379'
+        config.redis_password = '123456'
 
 By default Dashing subscribed to the following namespace in redis:
 
-  dashing_events.*
+        dashing_events.*
 
 where `*` can be anything. This give you all the flexibility you need to push to redis. For example the `send_event` method provided by Dashing uses the following namespace:
 
-  redis.publish("dashing_events.create", {})
+        redis.publish("dashing_events.create", {})
 
 You can configure the redis namespace in `config/initializers/dashing.rb`:
 
-  config.redis_namespace = 'your_redis_namespace'
+        config.redis_namespace = 'your_redis_namespace'
 
 ### API
 
@@ -135,12 +135,12 @@ Your widgets can be updated directly over HTTP. Post the data you want in json t
 
 Example:
 
-  curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 100 }' http://locahost:3000/dashing/widgets/karma
+        curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 100 }' http://locahost:3000/dashing/widgets/karma
 
 or
 
-  HTTParty.post('http://locahost:3000/dashing/widgets/karma',
-    body: { auth_token: "YOUR_AUTH_TOKEN", current: 1000 }.to_json)
+        HTTParty.post('http://locahost:3000/dashing/widgets/karma',
+          body: { auth_token: "YOUR_AUTH_TOKEN", current: 1000 }.to_json)
 
 #### Dasboards
 
@@ -184,7 +184,7 @@ All contributions are more than welcome; especially new widgets!
 
 Please add spec to your Pull Requests and run them using:
 
-  $ rake
+        $ rake
 
 ## License
 
