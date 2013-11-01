@@ -188,4 +188,4 @@ Please add spec to your Pull Requests and run them using:
 
 ## License
 
-Dashing is released under the [MIT license](https://github.com/Shopify/dashing/blob/master/MIT-LICENSE)
+Dashing is released under the [MIT license](https://github.com/gottfrois/dashing-rails/blob/master/MIT-LICENSE)
