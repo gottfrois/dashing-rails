@@ -9,7 +9,7 @@ A huge thanks to Shopify for their great work with the Sinatra version.
 
 **Warning**: To upgrade from `1.x.x` to `2.x.x` you need to run `rails g dashing:install`. Please read `CHANGELOG.md` for more details.
 
-<img src="https://dl.dropboxusercontent.com/u/29838807/newrelic-widget.png" width="600" />
+<img src="https://dl.dropboxusercontent.com/u/29838807/dashing-rails.png" width="600" />
 
 ## Introduction
 
