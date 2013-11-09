@@ -1,3 +1,7 @@
+## 2.0.1
+
+* Fix default widgets javascript files not required
+
 ## 2.0.0
 
 * Refactor assets management. Now they all live in `vendor` directory.
