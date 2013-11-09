@@ -8,7 +8,7 @@ module Dashing
     rescue_from ActionView::MissingTemplate, with: :template_not_found
 
     def show
-      render file: withdet_path
+      render file: widget_path
     end
 
     def update
@@ -25,7 +25,7 @@ module Dashing
       raise 'bad widget name' unless params[:name] =~ /\A[a-zA-z0-9_\-]+\z/
     end
 
-    def withdet_path
+    def widget_path
       params[:name]
     end
 
