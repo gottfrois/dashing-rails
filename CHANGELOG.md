@@ -1,3 +1,8 @@
+## 2.0.2
+
+* Fix bin rails polution
+* Improve rails engine and railtie
+
 ## 2.0.1
 
 * Fix default widgets javascript files not required
