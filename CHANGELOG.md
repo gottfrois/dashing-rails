@@ -1,3 +1,8 @@
+## 2.1.0
+
+* Fix font awesome not included in the asset pipeline
+* Upgrade font awesome to use the 4.0.x version
+
 ## 2.0.2
 
 * Fix bin rails polution
