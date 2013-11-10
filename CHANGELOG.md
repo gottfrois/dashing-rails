@@ -1,6 +1,9 @@
-## 2.1.0
+## 2.1.1
 
 * Fix font awesome not included in the asset pipeline
+
+## 2.1.0
+
 * Upgrade font awesome to use the 4.0.x version
 
 ## 2.0.2
