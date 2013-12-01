@@ -1,3 +1,7 @@
+## 2.2.0
+
+* Add dashing layout to the installer (re run `rails g dashing:install` if you want to have the dashing default layout file)
+
 ## 2.1.1
 
 * Fix font awesome not included in the asset pipeline

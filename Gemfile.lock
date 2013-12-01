@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dashing-rails (2.1.1)
+    dashing-rails (2.2.0)
       coffee-script (~> 2.2)
       connection_pool (~> 1.1)
       jquery-rails (~> 3.0)
@@ -47,7 +47,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    connection_pool (1.1.0)
+    connection_pool (1.2.0)
     coveralls (0.7.0)
       multi_json (~> 1.3)
       rest-client
@@ -114,7 +114,7 @@ GEM
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
     slop (3.4.6)
-    sprockets (2.10.0)
+    sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
