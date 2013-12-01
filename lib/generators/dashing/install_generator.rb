@@ -14,6 +14,10 @@ module Dashing
         template 'initializer.rb', 'config/initializers/dashing.rb'
       end
 
+      def copy_layout
+        template 'layouts/dashboard.html.erb', 'app/views/layouts/dashing/dashboard.html.erb'
+      end
+
       def copy_dashboard
         template 'dashboards/sample.html.erb', 'app/views/dashing/dashboards/sample.html.erb'
       end
