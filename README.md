@@ -185,6 +185,8 @@ Does not work in Internet Explorer because it relies on [Server Sent Events](htt
 * [Dashing-rails contributors](https://github.com/gottfrois/dashing-rails/contributors)
 * [Shopify Dashing contributors](https://github.com/Shopify/dashing/graphs/contributors)
 
+Special thanks to [Benjamin Roth](https://github.com/apneadiving) for his ideas and support.
+
 All contributions are more than welcome; especially new widgets!
 
 Please add spec to your Pull Requests and run them using:
