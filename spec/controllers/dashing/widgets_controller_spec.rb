@@ -2,6 +2,12 @@ require 'spec_helper'
 
 describe Dashing::WidgetsController do
 
+  let(:redis) { double }
+
+  before do
+    stub_redis(redis)
+  end
+
   describe 'GET "show"' do
 
     def action(params = {})
@@ -42,6 +48,10 @@ describe Dashing::WidgetsController do
     end
 
     context 'when valid' do
+
+      before do
+        expect(redis).to receive(:publish)
+      end
 
       it 'responds success' do
         action(name: 'foo')
