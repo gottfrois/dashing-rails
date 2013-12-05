@@ -74,8 +74,9 @@ Every new Dashing project comes with sample widgets & sample dashboards for you 
 
 * `app/views/dashing/dashboards` — One .erb file for each dashboard that contains the layout for the widgets.
 * `app/jobs` — Your ruby jobs for fetching data (e.g for calling third party APIs like twitter).
-* `app/assets/javascripts/dashing/widgets/` — One folder with widget's name containing a JS file.
-* `app/assets/stylesheets/dashing/widgets/` — One folder with widget's name containing a CSS file.
+* `app/assets/javascripts/dashing/widgets/` — A widget's name `.coffee` file containing your widget's js.
+* `app/assets/stylesheets/dashing/widgets/` — A widget's name `.scss` file containing your widget's css.
+* `app/views/dashing/widgets/` — A widget's name `.html` file containing your widget's html.
 * `app/views/layouts/dashing/` — All your custom layouts where your dashboards and widgets will be included.
 
 ## Getting Data Into Your Widgets
@@ -135,11 +136,15 @@ Your widgets can be updated directly over HTTP. Post the data you want in json t
 
 Example:
 
-    curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 100 }' http://locahost:3000/dashing/widgets/karma
+    curl -X PUT http://localhost:3000/dashing/widgets/welcome -d "widget[text]=Dashing is awesome"
 
 or
 
-    HTTParty.post('http://locahost:3000/dashing/widgets/karma',
+    curl -X PUT http://localhost:3000/dashing/widgets/karma -d "widget[current]=100" -d "auth_token=YOUR_AUTH_TOKEN"
+
+or
+
+    HTTParty.post('http://localhost:3000/dashing/widgets/karma',
       body: { auth_token: "YOUR_AUTH_TOKEN", current: 1000 }.to_json)
 
 #### Dasboards
