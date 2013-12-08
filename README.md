@@ -47,7 +47,7 @@ Key features:
 
         $ bundle
 
-4. Install the dependecies using the following command:
+4. Install the dependencies using the following command:
 
         $ rails g dashing:install
 
