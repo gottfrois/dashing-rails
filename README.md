@@ -197,3 +197,7 @@ Please add spec to your Pull Requests and run them using:
 ## License
 
 Dashing is released under the [MIT license](https://github.com/gottfrois/dashing-rails/blob/master/MIT-LICENSE)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/gottfrois/dashing-rails/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
