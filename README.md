@@ -67,7 +67,7 @@ Key features:
 8. Point your browser at [http://localhost:3000/dashing/dashboards](http://localhost:3000/dashing/dashboards) and have fun!
 
 
-**Important Note:** *We need to update the configuration in development to handle multiple requests at the same time. One request for the page we’re working on, and another request for the SSE controller.*
+**Important Note:** *We need to update the configuration in development to handle multiple requests at the same time. One request for the page we’re working on, and another request for the Server Sent Event controller.*
 
 - - -
 
