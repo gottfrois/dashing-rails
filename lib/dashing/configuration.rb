@@ -1,12 +1,10 @@
 require 'rufus-scheduler'
-require 'redis'
 require 'connection_pool'
 
 module Dashing
   class Configuration
 
-    attr_reader   :redis
-    attr_accessor :redis_host, :redis_port, :redis_password, :redis_namespace
+    attr_accessor :messenger_class, :messenger_url, :messenger_namespace
     attr_accessor :auth_token, :devise_allowed_models
     attr_accessor :jobs_path
     attr_accessor :default_dashboard, :dashboards_views_path, :dashboard_layout_path
@@ -17,11 +15,10 @@ module Dashing
       @engine_path            = '/dashing'
       @scheduler              = ::Rufus::Scheduler.new
 
-      # Redis
-      @redis_host             = '127.0.0.1'
-      @redis_port             = '6379'
-      @redis_password         = nil
-      @redis_namespace        = 'dashing_events'
+      # Messenger (ex: redis)
+      @messenger_class        = ::Dashing::Messengers::Redis
+      @messenger_url          = 'redis://localhost:6379/'
+      @messenger_namespace    = 'dashing_events'
 
       # Authorization
       @auth_token             = nil
@@ -41,15 +38,21 @@ module Dashing
       @widgets_css_path       = 'app/assets/stylesheets/dashing'
     end
 
-    def redis
-      @redis ||= ::ConnectionPool::Wrapper.new(size: request_thread_count, timeout: 3) { new_redis_connection }
-    end
-
-    def new_redis_connection
-      ::Redis.new(host: redis_host, port: redis_port, password: redis_password)
+    def messenger
+      @messenger ||= ::ConnectionPool::Wrapper.new(size: request_thread_count, timeout: 3) { new_messenger_connection }
     end
 
     private
+
+    def new_messenger_connection
+      messenger_class.new(messenger_options)
+    end
+
+    def messenger_options
+      {
+        url: messenger_url
+      }
+    end
 
     def request_thread_count
       if defined?(::Puma) && ::Puma.respond_to?(:cli_config)

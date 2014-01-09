@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dashing-rails (2.2.0)
+    dashing-rails (2.3.0.dev)
       coffee-script (~> 2.2)
       connection_pool (~> 1.1)
       jquery-rails (~> 3.0)
@@ -38,9 +38,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
-    better_errors (1.0.1)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
     builder (3.1.4)
     coderay (1.0.9)
     coffee-script (2.2.0)
@@ -107,7 +104,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    rufus-scheduler (3.0.2)
+    rufus-scheduler (3.0.3)
       tzinfo
     simplecov (0.7.1)
       multi_json (~> 1.0)
@@ -140,7 +137,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_errors (~> 1.0)
   coveralls
   dashing-rails!
   jquery-rails (~> 3.0)

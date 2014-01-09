@@ -25,6 +25,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'connection_pool',            '~> 1.1'
 
   spec.add_development_dependency 'rspec-rails',    '~> 2.14'
-  spec.add_development_dependency 'pry-rails',      '~> 0.3'
-  spec.add_development_dependency 'better_errors',  '~> 1.0'
 end

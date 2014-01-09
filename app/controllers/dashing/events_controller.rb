@@ -8,16 +8,12 @@ module Dashing
       response.headers['Content-Type']      = 'text/event-stream'
       response.headers['X-Accel-Buffering'] = 'no'
 
-      @redis = Dashing.redis
-      @redis.psubscribe("#{Dashing.config.redis_namespace}.*") do |on|
-        on.pmessage do |pattern, event, data|
-          response.stream.write("data: #{data}\n\n")
-        end
-      end
+      messenger = Dashing.messenger
+      messenger.stream(response)
     rescue IOError
       logger.info "[Dashing][#{Time.now.utc.to_s}] Stream closed"
     ensure
-      @redis.quit
+      messenger.quit
       response.stream.close
     end
 

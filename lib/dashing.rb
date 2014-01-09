@@ -1,7 +1,7 @@
 module Dashing
   class << self
 
-    delegate :scheduler, :redis, to: :config
+    delegate :scheduler, :messenger, to: :config
 
     attr_accessor :configuration
 
@@ -19,7 +19,7 @@ module Dashing
     end
 
     def send_event(id, data)
-      redis.publish("#{Dashing.config.redis_namespace}.create", data.merge(id: id, updatedAt: Time.now.utc.to_i).to_json)
+      messenger.publish("#{Dashing.config.messenger_namespace}.create", data.merge(id: id, updatedAt: Time.now.utc.to_i).to_json)
     end
 
   end
@@ -40,6 +40,8 @@ Rails:
 
 EOC
 
+require 'dashing/messenger'
+require 'dashing/messengers/redis'
 require 'dashing/configuration'
 
 if defined? Rails
