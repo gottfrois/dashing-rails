@@ -3,7 +3,7 @@ module ControllerSpecHelpers
     Dashing.config.stub(:scheduler).and_return(stubbed_scheduler)
   end
 
-  def stub_redis(stubbed_redis)
-    Dashing.config.stub(:redis).and_return(stubbed_redis)
+  def stub_messenger(stubbed_messenger)
+    Dashing.config.stub(:messenger).and_return(stubbed_messenger)
   end
 end

@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Dashing::WidgetsController do
 
-  let(:redis) { double }
+  let(:messenger) { double }
 
   before do
-    stub_redis(redis)
+    stub_messenger(messenger)
   end
 
   describe 'GET "show"' do
@@ -50,7 +50,7 @@ describe Dashing::WidgetsController do
     context 'when valid' do
 
       before do
-        expect(redis).to receive(:publish)
+        expect(messenger).to receive(:publish)
       end
 
       it 'responds success' do

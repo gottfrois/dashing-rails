@@ -132,6 +132,8 @@ This way you can have a seperate Rails 4 application (with puma) running your da
 You can specify Dashing redis credentials in `config/initializers/dashing.rb`:
 
 ```ruby
+config.redis_url      = 'redis://localhost:6379/'
+# or
 config.redis_host     = '127.0.0.1'
 config.redis_port     = '6379'
 config.redis_password = '123456'

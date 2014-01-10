@@ -3,17 +3,19 @@ Dashing.configure do |config|
   # Scheduler instance.
   # config.scheduler = ::Rufus::Scheduler.new
 
-  # Messenger credentials (by default dashing-rails uses Redis).
-  # See https://github.com/gottfrois/dashing-rails/wiki/About-Dashing-rails-Messenger
-  # for more information about messengers.
-  #
   # See https://devcenter.heroku.com/articles/redistogo to configure redis for heroku.
   #
-  # config.messenger_class        = ::Dashing::Messengers::Redis
-  # config.messenger_url          = 'redis://localhost:6379/'
+  # config.redis_namespace        = 'dashing_events'
+  # config.redis_url              = 'redis://localhost:6379/'
+  #
+  # or setting explicitely the credentials
+  #
+  # config.redis_host             = '127.0.0.1'
+  # config.redis_port             = '6379'
+  # config.redis_password         = nil
 
-  # Messenger namespace when pushing new data.
-  # config.messenger_namespace    = 'dashing_events'
+  # If you need to use something else than redis to push data into dashing-rails,
+  # please see https://github.com/gottfrois/dashing-rails/wiki/About-Dashing-rails-Messenger
 
   # Dashing come with default widgets using css and coffeescript.
   # You can create your own widgets by adding the following files:

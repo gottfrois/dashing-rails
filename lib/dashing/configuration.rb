@@ -4,12 +4,18 @@ require 'connection_pool'
 module Dashing
   class Configuration
 
-    attr_accessor :messenger_class, :messenger_url, :messenger_namespace
+    attr_accessor :messenger_class, :messenger_namespace, :messenger_url, :messenger_host, :messenger_port, :messenger_password
     attr_accessor :auth_token, :devise_allowed_models
     attr_accessor :jobs_path
     attr_accessor :default_dashboard, :dashboards_views_path, :dashboard_layout_path
     attr_accessor :widgets_views_path, :widgets_js_path, :widgets_css_path
     attr_accessor :engine_path, :scheduler
+
+    # Deprecated. Keep for retro-compatibility only
+    alias :redis_host         :messenger_host
+    alias :redis_port         :messenger_port
+    alias :redis_password     :messenger_password
+    alias :redis_namespace    :messenger_namespace
 
     def initialize
       @engine_path            = '/dashing'
@@ -17,8 +23,11 @@ module Dashing
 
       # Messenger (ex: redis)
       @messenger_class        = ::Dashing::Messengers::Redis
-      @messenger_url          = 'redis://localhost:6379/'
       @messenger_namespace    = 'dashing_events'
+      @messenger_url          = 'redis://localhost:6379/'
+      @messenger_host         = '127.0.0.1'
+      @messenger_port         = '6379'
+      @messenger_password     = nil
 
       # Authorization
       @auth_token             = nil

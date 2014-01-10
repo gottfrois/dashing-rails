@@ -6,9 +6,15 @@ describe Dashing::Configuration do
 
   it { expect(instance.engine_path).to            eq('/dashing') }
   # it { expect(instance.scheduler).to              be_a(::Rufus::Scheduler.new) }
-  it { expect(instance.redis).to                  be_a(::Redis) }
+  it { expect(instance.messenger).to              be_a(::Dashing::Messengers::Redis) }
 
-  # Redis
+  it { expect(instance.messenger_url).to          eq('redis://localhost:6379/') }
+  it { expect(instance.messenger_host).to         eq('127.0.0.1') }
+  it { expect(instance.messenger_port).to         eq('6379') }
+  it { expect(instance.messenger_password).to     be_nil }
+  it { expect(instance.messenger_namespace).to    eq('dashing_events') }
+
+  # Deprecated. Retro-compatibility
   it { expect(instance.redis_host).to             eq('127.0.0.1') }
   it { expect(instance.redis_port).to             eq('6379') }
   it { expect(instance.redis_password).to         be_nil }
