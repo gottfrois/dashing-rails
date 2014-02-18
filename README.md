@@ -66,7 +66,7 @@ $ rails g dashing:install
 $ redis-server
 ```
 
-6. Open `config/development.rb` and add:
+6. Open `config/environments/development.rb` and add:
 
 ```ruby
 config.allow_concurrency = true
