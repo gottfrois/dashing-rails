@@ -204,6 +204,13 @@ You can also install pre-package widget compatible with dashing-rails. Here is [
 
 ## Additional Resources
 
+### DASHING-RAILS SCREENCAST
+
+[![dashing-rails-devcast](https://dl.dropboxusercontent.com/u/12834645/devhero/dashing-rails-devcast.png)](https://vimeo.com/87316697)
+
+https://github.com/jcdavison/dashing-rails-demo
+
+
 Check out the [wiki](https://github.com/gottfrois/dashing-rails/wiki) for interesting tips such as hosting on Heroku, adding authentication or adding custom widgets.
 
 ## Browser Compatibility
