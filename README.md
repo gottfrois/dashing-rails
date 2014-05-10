@@ -9,7 +9,7 @@
 Dashing-rails is the Rails Engine version of [Dashing by Shopify](http://shopify.github.io/dashing/).
 A huge thanks to Shopify for their great work with the Sinatra version.
 
-**Warning**: To upgrade from `1.x.x` to `2.x.x` you need to run `rails g dashing:install`. Please read `CHANGELOG.md` for more details.
+**Warning**: To upgrade from `2.2.x` to `2.3.x` please read `CHANGELOG.md`.
 
 <img src="https://dl.dropboxusercontent.com/u/29838807/dashing-rails.png" width="600" />
 

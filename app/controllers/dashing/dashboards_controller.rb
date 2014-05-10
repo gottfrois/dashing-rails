@@ -20,7 +20,7 @@ module Dashing
     end
 
     def dashboard_path(name)
-      Rails.root.join(Dashing.config.dashboards_views_path, name)
+      Dashing.config.dashboards_views_path.call.join(name)
     end
 
     def template_not_found
