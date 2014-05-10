@@ -1,3 +1,7 @@
+## 2.3.0
+
+* Remove all `Rails.root` occurance and move them to configuration file. Please use a proc or a lambda in the configuration since `Rails` module might not be defined when configuration file is required.
+
 ## 2.2.0
 
 * Add dashing layout to the installer (re run `rails g dashing:install` if you want to have the dashing default layout file)
