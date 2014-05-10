@@ -26,19 +26,19 @@ Dashing.configure do |config|
   #
   # You can change default views and assets paths with the following config:
   #
-  # config.widgets_views_path = 'app/views/dashing/widgets/'
+  # config.widgets_views_path = -> { Rails.root.join('app', 'views', 'dashing', 'widgets') }
   # config.widgets_js_path    = 'app/assets/javascripts/dashing'
   # config.widgets_css_path   = 'app/assets/stylesheets/dashing'
 
   # rufus-scheduler worker path
-  # config.jobs_path = 'app/jobs/'
+  # config.jobs_path = -> { Rails.root.join('app', 'jobs') }
 
   # Engine path to use for accessing engine's routes.
   # Ex: http://your_app/dashing/dashboard/my_dashboard_name
   # config.engine_path = '/dashing'
 
   # The dashboards views path used to find dashboards.
-  # config.dashboards_views_path = 'app/views/dashing/dashboards/'
+  # config.dashboards_views_path = -> { Rails.root.join('app', 'views', 'dashing', 'dashboards') }
 
   # The Dashing layout used to display metrics.
   # config.dashboard_layout_path = 'dashing/dashboard'

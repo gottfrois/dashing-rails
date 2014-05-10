@@ -19,15 +19,15 @@ describe Dashing::Configuration do
   it { expect(instance.devise_allowed_models).to  be_empty }
 
   # Jobs
-  it { expect(instance.jobs_path).to              eq('app/jobs/') }
+  it { expect(instance.jobs_path.call.to_s).to    include('app/jobs') }
 
   # Dashboards
   it { expect(instance.default_dashboard).to      be_nil }
-  it { expect(instance.dashboards_views_path).to  eq('app/views/dashing/dashboards/') }
+  it { expect(instance.dashboards_views_path.call.to_s).to include('app/views/dashing/dashboards') }
   it { expect(instance.dashboard_layout_path).to  eq('dashing/dashboard') }
 
   # Widgets
-  it { expect(instance.widgets_views_path).to     eq('app/views/dashing/widgets/') }
+  it { expect(instance.widgets_views_path.call.to_s).to include('app/views/dashing/widgets') }
   it { expect(instance.widgets_js_path).to        eq('app/assets/javascripts/dashing') }
   it { expect(instance.widgets_css_path).to       eq('app/assets/stylesheets/dashing') }
 

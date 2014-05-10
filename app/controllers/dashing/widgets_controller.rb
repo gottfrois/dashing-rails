@@ -34,7 +34,7 @@ module Dashing
     end
 
     def main_app_view_path
-      Rails.root.join(Dashing.config.widgets_views_path)
+      Dashing.config.widgets_views_path.call
     end
 
     def template_not_found
