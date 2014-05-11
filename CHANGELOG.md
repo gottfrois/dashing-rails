@@ -1,3 +1,7 @@
+## 2.3.1
+
+* Patch redis child connection when using passenger
+
 ## 2.3.0
 
 * Remove all `Rails.root` occurance and move them to configuration file. Please use a proc or a lambda in the configuration since `Rails` module might not be defined when configuration file is required.
