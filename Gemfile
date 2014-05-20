@@ -10,7 +10,6 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem 'sqlite3'
 gem 'jquery-rails', '~> 3.0'
 
 group :test do
