@@ -6,7 +6,7 @@ module Dashing
   class Configuration
 
     attr_reader   :redis
-    attr_accessor :redis_host, :redis_port, :redis_password, :redis_namespace
+    attr_accessor :redis_host, :redis_port, :redis_password, :redis_namespace, :redis_timeout
     attr_accessor :auth_token, :devise_allowed_models
     attr_accessor :jobs_path
     attr_accessor :default_dashboard, :dashboards_views_path, :dashboard_layout_path
@@ -22,6 +22,7 @@ module Dashing
       @redis_port             = '6379'
       @redis_password         = nil
       @redis_namespace        = 'dashing_events'
+      @redis_timeout          = 3
 
       # Authorization
       @auth_token             = nil
@@ -42,7 +43,7 @@ module Dashing
     end
 
     def redis
-      @redis ||= ::ConnectionPool::Wrapper.new(size: request_thread_count, timeout: 3) { new_redis_connection }
+      @redis ||= ::ConnectionPool::Wrapper.new(size: request_thread_count, timeout: redis_timeout) { new_redis_connection }
     end
 
     def new_redis_connection
