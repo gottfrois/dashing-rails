@@ -12,6 +12,7 @@ describe Dashing::Configuration do
   it { expect(instance.redis_host).to             eq('127.0.0.1') }
   it { expect(instance.redis_port).to             eq('6379') }
   it { expect(instance.redis_password).to         be_nil }
+  it { expect(instance.redis_timeout).to          eq(3) }
   it { expect(instance.redis_namespace).to        eq('dashing_events') }
 
   # Authorization
