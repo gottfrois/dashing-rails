@@ -1,3 +1,7 @@
+## 2.3.2
+
+* Fixes [#46](https://github.com/gottfrois/dashing-rails/issues/46)
+
 ## 2.3.1
 
 * Patch redis child connection when using passenger
