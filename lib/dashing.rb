@@ -4,8 +4,6 @@ module Dashing
     delegate :scheduler, :redis, to: :config
 
     attr_accessor :configuration
-    attr_accessor :application_root
-
 
     def config
       self.configuration ||= Configuration.new

@@ -27,7 +27,5 @@ module Dashing
         end
       end
     end
-
-
   end
 end
