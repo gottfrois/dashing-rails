@@ -10,6 +10,10 @@ require File.expand_path(ENGINE_RAILS_ROOT + 'spec/dummy/config/environment', __
 require 'rspec/rails'
 require 'rspec/autorun'
 
+puts Rails.root.inspect
+puts Rails.inspect
+
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[File.join(File.dirname(__FILE__), '../', 'spec/support/**/*.rb')].each { |f| require f }

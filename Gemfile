@@ -18,4 +18,5 @@ group :test do
   gem 'simplecov',  require: false
   gem 'rspec-rails', '~> 2.14'
   gem 'pry-rails',   '~> 0.3'
+  gem 'generator_spec'
 end
