@@ -1,5 +1,5 @@
 Batman.config.pathPrefix = "/"
-Batman.config.viewPrefix = "/dashing/widgets/"
+Batman.config.pathToHTML = "/dashing/widgets/"
 
 Batman.Filters.prettyNumber = (num) ->
   num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") unless isNaN(num)
@@ -26,18 +26,23 @@ class window.Dashing extends Batman.App
 Dashing.params = Batman.URI.paramsFromQuery(window.location.search.slice(1));
 
 class Dashing.Widget extends Batman.View
-  constructor:  ->
+  constructor: ->
     # Set the view path
     @constructor::source = Batman.Filters.underscore(@constructor.name)
     super
 
-    @mixin($(@node).data())
+  loadView: (_node) ->
+    node = super
+
+    @mixin($(node).data())
     Dashing.widgets[@id] ||= []
     Dashing.widgets[@id].push(@)
     @mixin(Dashing.lastEvents[@id]) # in case the events from the server came before the widget was rendered
 
-    type = Batman.Filters.dashize(@view)
-    $(@node).addClass("widget widget-#{type} #{@id}")
+    type = Batman.Filters.dashize(@constructor.name)
+    $(node).addClass("widget widget-#{type} #{@id}")
+
+    return node
 
   @accessor 'updatedAtMessage', ->
     if updatedAt = @get('updatedAt')
