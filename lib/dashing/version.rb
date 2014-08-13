@@ -1,3 +1,3 @@
 module Dashing
-  VERSION = '2.4.0'
+  VERSION = '2.3.2'
 end
