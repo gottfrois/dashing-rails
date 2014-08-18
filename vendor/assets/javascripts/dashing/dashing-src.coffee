@@ -29,20 +29,23 @@ class Dashing.Widget extends Batman.View
   constructor: ->
     # Set the view path
     @constructor::source = Batman.Filters.underscore(@constructor.name)
+
     super
 
-  loadView: (_node) ->
-    node = super
+    @observe 'node', (newValue, oldValue) ->
+      if !oldValue && !@_registeredAtDashing
+        @_registeredAtDashing = true
 
-    @mixin($(node).data())
-    Dashing.widgets[@id] ||= []
-    Dashing.widgets[@id].push(@)
-    @mixin(Dashing.lastEvents[@id]) # in case the events from the server came before the widget was rendered
+        @mixin($(@node).data())
+        Dashing.widgets[@id] ||= []
+        Dashing.widgets[@id].push(@)
 
-    type = Batman.Filters.dashize(@constructor.name)
-    $(node).addClass("widget widget-#{type} #{@id}")
+        # in case the events from the server came
+        # before the widget was rendered
+        @mixin(Dashing.lastEvents[@id]) 
 
-    return node
+        type = Batman.Filters.dashize(@constructor.name)
+        $(@node).addClass("widget widget-#{type} #{@id}")
 
   @accessor 'updatedAtMessage', ->
     if updatedAt = @get('updatedAt')
