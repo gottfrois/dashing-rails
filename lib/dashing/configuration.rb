@@ -37,9 +37,9 @@ module Dashing
       @dashboard_layout_path  = 'dashing/dashboard'
 
       # Widgets
-      @widgets_views_path     = -> { Rails.root.join('app', 'views', 'dashing', 'widgets') }
-      @widgets_js_path        = 'app/assets/javascripts/dashing'
-      @widgets_css_path       = 'app/assets/stylesheets/dashing'
+      @widgets_views_path     = Rails.root.join('app', 'views', 'dashing', 'widgets')
+      @widgets_js_path        = Rails.root.join('app', 'assets', 'javascripts', 'dashing')
+      @widgets_css_path       = Rails.root.join('app', 'assets', 'stylesheets', 'dashing')
     end
 
     def redis

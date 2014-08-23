@@ -28,9 +28,9 @@ describe Dashing::Configuration do
   it { expect(instance.dashboard_layout_path).to  eq('dashing/dashboard') }
 
   # Widgets
-  it { expect(instance.widgets_views_path.call.to_s).to include('app/views/dashing/widgets') }
-  it { expect(instance.widgets_js_path).to        eq('app/assets/javascripts/dashing') }
-  it { expect(instance.widgets_css_path).to       eq('app/assets/stylesheets/dashing') }
+  it { expect(instance.widgets_views_path.to_s).to include('app/views/dashing/widgets') }
+  it { expect(instance.widgets_js_path.to_s).to    include('app/assets/javascripts/dashing') }
+  it { expect(instance.widgets_css_path.to_s).to   include('app/assets/stylesheets/dashing') }
 
   describe '#request_thread_count' do
 

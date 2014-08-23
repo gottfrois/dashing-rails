@@ -34,7 +34,7 @@ module Dashing
     end
 
     def main_app_view_path
-      Dashing.config.widgets_views_path.call
+      Dashing.config.widgets_views_path
     end
 
     def template_not_found
