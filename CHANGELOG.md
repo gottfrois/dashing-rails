@@ -1,3 +1,8 @@
+## 2.4.0
+
+* Update Batman.js using `batman-rails` gem
+* Fixes [#41](https://github.com/gottfrois/dashing-rails/issues/41) for good. We now don't have to use proc or lambdas anymore.
+
 ## 2.3.2
 
 * Fixes [#46](https://github.com/gottfrois/dashing-rails/issues/46)
