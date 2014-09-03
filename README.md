@@ -44,45 +44,45 @@ Key features:
 
 1. Install the gem by adding the following in your `Gemfile`:
 
-```ruby
-gem 'dashing-rails'
-```
+  ```ruby
+  gem 'dashing-rails'
+  ```
 
 2. Install puma server by adding the following in your `Gemfile`:
 
-```ruby
-gem 'puma'
-```
+  ```ruby
+  gem 'puma'
+  ```
 
 3. Bundle install
 
-```
-$ bundle
-```
+  ```
+  $ bundle
+  ```
 
 4. Install the dependencies using the following command:
 
-```
-$ rails g dashing:install
-```
+  ```
+  $ rails g dashing:install
+  ```
 
 5. Start redis server:
 
-```
-$ redis-server
-```
+  ```
+  $ redis-server
+  ```
 
 6. Open `config/environments/development.rb` and add:
 
-```ruby
-config.allow_concurrency = true
-```
+  ```ruby
+  config.allow_concurrency = true
+  ```
 
 7. Start your server (must be a multi threaded server - See [Requirements](https://github.com/gottfrois/dashing-rails#requirements))
 
-```
-$ rails s
-```
+  ```
+  $ rails s
+  ```
 
 8. Point your browser at [http://localhost:3000/dashing/dashboards](http://localhost:3000/dashing/dashboards) and have fun!
 
