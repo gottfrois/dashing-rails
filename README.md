@@ -18,10 +18,6 @@ A huge thanks to Shopify for their great work with the Sinatra version.
 
 Dashing is a Rails engine that lets you build beautiful dashboards.
 
-[Click here for a video tutorial on how to use this gem:](http://devcasts.co/dashing-rails-making-dashingly-handsome-dashboards/)
-
-[![dashing-rails-devcast](http://devcasts.co/wp-content/uploads/2014/03/dashing-rails.png)](http://devcasts.co/dashing-rails-making-dashingly-handsome-dashboards/)
-
 Check out a demo over [here](http://dashingdemo.herokuapp.com/sample). [Here's another one](http://dashingdemo.herokuapp.com/sampletv), optimized for 1080p screens.
 
 Key features:
