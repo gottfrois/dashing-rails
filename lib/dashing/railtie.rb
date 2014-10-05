@@ -14,7 +14,7 @@ module Dashing
     end
 
     initializer 'require dashing jobs' do
-      Dir[Dashing.config.jobs_path.call.join('**', '*.rb')].each { |file| require file }
+      Dir[Dashing.config.jobs_path.join('**', '*.rb')].each { |file| require file }
     end
 
     initializer 'fix redis child connection' do
