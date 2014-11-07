@@ -14,7 +14,7 @@ module Dashing
     end
 
     def first_dashboard
-      files = Dir[config.dashboards_views_path.call.join('*')].collect { |f| File.basename(f, '.*') }
+      files = Dir[config.dashboards_views_path.join('*')].collect { |f| File.basename(f, '.*') }
       files.sort.first
     end
 

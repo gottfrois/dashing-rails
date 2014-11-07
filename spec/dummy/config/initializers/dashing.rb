@@ -32,7 +32,7 @@ Dashing.configure do |config|
   # config.widgets_css_path   = 'app/assets/stylesheets/dashing'
 
   # rufus-scheduler worker path
-  # config.jobs_path = 'app/jobs/'
+  # config.jobs_path = Rails.root.join('app', 'jobs')
 
   # Engine path to use for accessing engine's routes.
   # Ex: http://your_app/dashing/dashboard/my_dashboard_name

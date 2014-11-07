@@ -29,11 +29,11 @@ module Dashing
       @devise_allowed_models  = []
 
       # Jobs
-      @jobs_path              = -> { Rails.root.join('app', 'jobs') }
+      @jobs_path              = Rails.root.join('app', 'jobs')
 
       # Dashboards
       @default_dashboard      = nil
-      @dashboards_views_path  = -> { Rails.root.join('app', 'views', 'dashing', 'dashboards') }
+      @dashboards_views_path  = Rails.root.join('app', 'views', 'dashing', 'dashboards')
       @dashboard_layout_path  = 'dashing/dashboard'
 
       # Widgets
