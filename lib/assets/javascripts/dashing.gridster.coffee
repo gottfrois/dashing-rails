@@ -6,7 +6,7 @@ Dashing.gridsterLayout = (positions) ->
   Dashing.customGridsterLayout = true
   positions = positions.replace(/^"|"$/g, '')
   positions = $.parseJSON(positions)
-  widgets = $("[data-row^=]")
+  widgets = $("[data-row]")
   for widget, index in widgets
     $(widget).attr('data-row', positions[index].row)
     $(widget).attr('data-col', positions[index].col)
