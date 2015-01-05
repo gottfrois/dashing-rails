@@ -8,7 +8,7 @@ module Dashing
     rescue_from ActionView::MissingTemplate, with: :template_not_found
 
     def show
-      render file: widget_path
+      render file: widget_path, layout: false
     end
 
     def update
