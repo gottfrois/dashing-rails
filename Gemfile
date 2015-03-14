@@ -11,12 +11,3 @@ gemspec
 # your gem to rubygems.org.
 
 gem 'sqlite3'
-gem 'jquery-rails', '~> 3.0'
-
-group :test do
-  gem 'coveralls',  require: false
-  gem 'simplecov',  require: false
-  gem 'rspec-rails', '~> 2.14'
-  gem 'pry-rails',   '~> 0.3'
-  gem 'generator_spec'
-end

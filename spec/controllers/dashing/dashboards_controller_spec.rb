@@ -2,10 +2,14 @@ require 'spec_helper'
 
 describe Dashing::DashboardsController do
 
+  before do
+    @routes = Dashing::Engine.routes
+  end
+
   describe 'GET "index"' do
 
     def action
-      get :index, use_route: :dashing
+      get :index
     end
 
     it 'responds success' do
@@ -18,7 +22,7 @@ describe Dashing::DashboardsController do
   describe 'GET "show"' do
 
     def action(params = {})
-      get :show, params.merge(use_route: :dashing)
+      get :show, params
     end
 
     context 'when template exists' do

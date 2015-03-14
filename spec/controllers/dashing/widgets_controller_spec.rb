@@ -6,12 +6,13 @@ describe Dashing::WidgetsController do
 
   before do
     stub_redis(redis)
+    @routes = Dashing::Engine.routes
   end
 
   describe 'GET "show"' do
 
     def action(params = {})
-      get :show, params.merge(use_route: :dashing)
+      get :show, params
     end
 
     context 'when default template exists' do
@@ -44,7 +45,7 @@ describe Dashing::WidgetsController do
   describe 'PUT "update"' do
 
     def action(params = {})
-      put :update, params.merge(use_route: :dashing)
+      put :update, params
     end
 
     context 'when valid' do
