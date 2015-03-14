@@ -1,3 +1,7 @@
+## 2.4.1
+
+* Update graph widget coffee code
+
 ## 2.4.0
 
 * Update Batman.js using `batman-rails` gem
