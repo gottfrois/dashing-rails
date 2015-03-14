@@ -15,13 +15,13 @@ describe Dashing do
     let(:configuration) { Dashing::Configuration.new }
 
     before do
-      Dashing.stub(:config).and_return(:configuration)
+      allow(Dashing).to receive(:config).and_return(:configuration)
     end
 
     context 'when block given' do
 
       it 'yields configuration' do
-        Dashing.should_receive(:configure).and_yield(configuration)
+        expect(Dashing).to receive(:configure).and_yield(configuration)
         Dashing.configure {|config|}
       end
 
@@ -29,9 +29,7 @@ describe Dashing do
 
     context 'when no block given' do
 
-      it 'does nothing' do
-        Dashing.configure.should be_nil
-      end
+      it { expect(Dashing.configure).to be_nil }
 
     end
 
@@ -43,7 +41,7 @@ describe Dashing do
     let(:dirs)  { [dir] }
 
     before do
-      Dir.stub(:[]).and_return(dirs)
+      allow(Dir).to receive(:[]).and_return(dirs)
     end
 
     it { expect(Dashing.first_dashboard).to eq(dir) }
