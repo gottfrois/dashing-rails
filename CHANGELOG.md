@@ -1,3 +1,11 @@
+## 2.4.2
+
+* Update dashing js src file from dashing sinatra version
+* Update dashing css src file from dashing sinatra version
+* Update gem dependencies
+* Fix rails lock versioning to allow `>= 4.0`
+* Remove `respond_to` reference in events controller
+
 ## 2.4.1
 
 * Update graph widget coffee code
