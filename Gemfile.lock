@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dashing-rails (2.4.2)
+    dashing-rails (2.4.3)
       coffee-script (~> 2.2)
       connection_pool (~> 2.1)
       jquery-rails (~> 3.1)

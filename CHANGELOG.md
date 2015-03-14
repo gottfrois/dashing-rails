@@ -1,4 +1,11 @@
+## 2.4.3
+
+* Fix bugs in `2.4.2` related to upgrades on graph widget without upgrading dashing-src and downgrading batman.js
+* Revert rails lock version to be `~> 4.1`
+
 ## 2.4.2
+
+**Buggy version, please upgrade to 2.4.3**
 
 * Update dashing js src file from dashing sinatra version
 * Update dashing css src file from dashing sinatra version
@@ -7,6 +14,8 @@
 * Remove `respond_to` reference in events controller
 
 ## 2.4.1
+
+**Buggy version, please upgrade to 2.4.3**
 
 * Update graph widget coffee code
 
