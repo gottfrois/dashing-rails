@@ -17,10 +17,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'rails',                      '>= 4.0'
+  spec.add_dependency 'rails',                      '~> 4.1'
   spec.add_dependency 'jquery-rails',               '~> 3.1'
   spec.add_dependency 'coffee-script',              '~> 2.2'
-  spec.add_dependency 'batman-rails',               '~> 0.16.1'
   spec.add_dependency 'rufus-scheduler',            '~> 3.0'
   spec.add_dependency 'redis',                      '~> 3.2'
   spec.add_dependency 'connection_pool',            '~> 2.1'
@@ -31,5 +30,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'generator_spec'
-  spec.add_development_dependency 'sqlite3'
 end

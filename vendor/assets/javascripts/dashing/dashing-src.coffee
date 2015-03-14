@@ -1,5 +1,5 @@
-Batman.config.pathPrefix = "/"
-Batman.config.pathToHTML = "/dashing/widgets/"
+Batman.config.pathPrefix = '/'
+Batman.config.viewPrefix = '/dashing/widgets/'
 
 Batman.Filters.prettyNumber = (num) ->
   num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") unless isNaN(num)

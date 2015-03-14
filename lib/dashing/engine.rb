@@ -1,5 +1,3 @@
-require 'batman-rails'
-
 module Dashing
   class Engine < ::Rails::Engine
     isolate_namespace Dashing
