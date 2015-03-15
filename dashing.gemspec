@@ -24,10 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'redis',                      '~> 3.2'
   spec.add_dependency 'connection_pool',            '~> 2.1'
 
-  spec.add_development_dependency 'rspec-rails',    '~> 2.14'
   spec.add_development_dependency 'pry-rails'
   spec.add_development_dependency 'better_errors'
-  spec.add_development_dependency 'coveralls'
-  spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'generator_spec'
 end

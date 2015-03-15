@@ -11,3 +11,10 @@ gemspec
 # your gem to rubygems.org.
 
 gem 'sqlite3'
+
+group :test, :development do
+  gem 'rspec-rails', '~> 2.14'
+  gem 'simplecov', require: false
+  gem 'coveralls', require: false
+  gem 'generator_spec', require: false
+end
