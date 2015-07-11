@@ -1,3 +1,10 @@
+## 2.4.4
+
+* Upgrade jquery.gridster to 0.5.6
+* Upgrade Rickshaw to 1.5.1
+* Cherry pick https://github.com/Shopify/dashing/pull/438
+* Cherry pick https://github.com/Shopify/dashing/pull/521
+
 ## 2.4.3
 
 * Fix bugs in `2.4.2` related to upgrades on graph widget without upgrading dashing-src and downgrading batman.js
