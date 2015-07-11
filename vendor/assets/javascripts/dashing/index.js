@@ -16,7 +16,7 @@
 //= require jquery.leanModal.min
 //= require jquery.timeago
 //= require moment.min
-//= require rickshaw-1.4.3.min
+//= require rickshaw-1.5.1.min
 //= require batman
 //= require batman.jquery
 //= require d3-3.2.8.min
