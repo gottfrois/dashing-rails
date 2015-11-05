@@ -1,3 +1,7 @@
+## 2.4.5
+
+* Fix js lib require order issue [https://github.com/gottfrois/dashing-rails/pull/79](https://github.com/gottfrois/dashing-rails/pull/79)
+
 ## 2.4.4
 
 * Upgrade jquery.gridster to 0.5.6
