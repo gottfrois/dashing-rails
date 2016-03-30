@@ -5,6 +5,7 @@ module Dashing
     def index
       response.headers['Content-Type']      = 'text/event-stream'
       response.headers['X-Accel-Buffering'] = 'no'
+      response.stream.write latest_events
 
       @redis = Dashing.redis
       @redis.psubscribe("#{Dashing.config.redis_namespace}.*") do |on|
@@ -17,6 +18,10 @@ module Dashing
     ensure
       @redis.quit
       response.stream.close
+    end
+
+    def latest_events
+      Dashing.redis.hvals("#{Dashing.config.redis_namespace}.latest").map { |v| "data: #{v}\n\n" }.join
     end
 
   end
