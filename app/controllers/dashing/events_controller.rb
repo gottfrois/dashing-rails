@@ -21,8 +21,8 @@ module Dashing
     end
 
     def latest_events
-      Dashing.redis.hvals("#{Dashing.config.redis_namespace}.latest").map { |v| "data: #{v}\n\n" }.join
+      events = Dashing.redis.hvals("#{Dashing.config.redis_namespace}.latest")
+      events.map { |v| "data: #{v}\n\n" }.join
     end
-
   end
 end
