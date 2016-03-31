@@ -10,9 +10,8 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem 'sqlite3'
-
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.14'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
