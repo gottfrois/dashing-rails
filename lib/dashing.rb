@@ -19,7 +19,9 @@ module Dashing
     end
 
     def send_event(id, data)
-      redis.publish("#{Dashing.config.redis_namespace}.create", data.merge(id: id, updatedAt: Time.now.utc.to_i).to_json)
+      event = data.merge(id: id, updatedAt: Time.now.utc.to_i).to_json
+      redis.hset("#{Dashing.config.redis_namespace}.latest", id, event)
+      redis.publish("#{Dashing.config.redis_namespace}.create", event)
     end
 
   end
