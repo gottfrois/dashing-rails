@@ -1,3 +1,10 @@
+## 2.5.0
+
+* Saves last event on redis to be sent on first connection (@scambra)
+* Upgrades rufus-scheduler
+* Specifies bundler minimum version
+* Moves sqlite3 deps in test/development group only
+
 ## 2.4.5
 
 * Fix js lib require order issue [https://github.com/gottfrois/dashing-rails/pull/79](https://github.com/gottfrois/dashing-rails/pull/79)
