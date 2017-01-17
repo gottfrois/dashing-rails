@@ -17,7 +17,7 @@
 //= require jquery.timeago
 //= require moment.min
 //= require d3-3.5.17.min
-//= require rickshaw-1.5.1.min
+//= require rickshaw-1.6.0.min
 //= require batman
 //= require batman.jquery
 //= require es5-shim
