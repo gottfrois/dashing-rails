@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Dashing::WidgetsController do
+RSpec.describe Dashing::WidgetsController do
 
   let(:redis) { double }
 

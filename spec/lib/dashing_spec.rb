@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Dashing do
+RSpec.describe Dashing do
 
   it { expect(Dashing).to respond_to :configuration }
 

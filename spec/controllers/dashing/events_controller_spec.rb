@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Dashing::EventsController do
+RSpec.describe Dashing::EventsController do
 
   describe 'GET "index"' do
 

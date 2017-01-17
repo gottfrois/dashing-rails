@@ -1,7 +1,7 @@
 module Dashing
   class DashboardsController < ApplicationController
 
-    before_filter :check_dashboard_name, only: :show
+    before_action :check_dashboard_name, only: :show
 
     rescue_from ActionView::MissingTemplate, with: :template_not_found
 

@@ -12,8 +12,6 @@ gemspec
 
 group :test, :development do
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 2.14'
-  gem 'simplecov', require: false
-  gem 'coveralls', require: false
+  gem 'rspec-rails', '~> 3.5'
   gem 'generator_spec', require: false
 end

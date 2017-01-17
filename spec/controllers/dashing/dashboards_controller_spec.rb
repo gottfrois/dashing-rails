@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Dashing::DashboardsController do
+RSpec.describe Dashing::DashboardsController do
 
   before do
     @routes = Dashing::Engine.routes

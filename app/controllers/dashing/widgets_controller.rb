@@ -1,9 +1,9 @@
 module Dashing
   class WidgetsController < ApplicationController
 
-    before_filter :check_accessibility, only: :update
-    before_filter :check_widget_name,   only: [:show, :update]
-    before_filter :prepend_view_paths,  only: :show
+    before_action :check_accessibility, only: :update
+    before_action :check_widget_name,   only: [:show, :update]
+    before_action :prepend_view_paths,  only: :show
 
     rescue_from ActionView::MissingTemplate, with: :template_not_found
 

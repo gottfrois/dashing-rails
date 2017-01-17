@@ -1,8 +1,7 @@
-require 'spec_helper'
 require 'generator_spec'
 require 'generators/dashing/widget_generator'
 
-describe Dashing::Generators::WidgetGenerator do
+RSpec.describe Dashing::Generators::WidgetGenerator do
 
   arguments %w(test_widget)
 

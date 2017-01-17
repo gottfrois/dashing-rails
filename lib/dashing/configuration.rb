@@ -53,11 +53,7 @@ module Dashing
     private
 
     def request_thread_count
-      if defined?(::Puma) && ::Puma.respond_to?(:cli_config)
-        ::Puma.cli_config.options.fetch(:max_threads, 5).to_i
-      else
-        5
-      end
+      Integer(ENV['RAILS_MAX_THREADS'] || 5)
     end
   end
 end
