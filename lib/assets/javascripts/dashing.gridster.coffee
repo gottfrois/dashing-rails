@@ -6,26 +6,10 @@ Dashing.gridsterLayout = (positions) ->
   Dashing.customGridsterLayout = true
   positions = positions.replace(/^"|"$/g, '')
   positions = $.parseJSON(positions)
-  widgets = $("[data-row]")
-  maxRow = 1
-  maxCol = 1
-  numColumns = Dashing.numColumns || 1
+  widgets = $("[data-row^=]")
   for widget, index in widgets
-    if positions? and index < positions.length
-      $(widget).attr('data-row', positions[index].row)
-      $(widget).attr('data-col', positions[index].col)
-      if positions[index].row > maxRow
-        maxRow = positions[index].row
-        maxCol = positions[index].col + 1
-      else if positions[index].row == maxRow and positions[index].col >= maxCol
-        maxCol = positions[index].col + 1
-    else
-      if maxCol > numColumns
-        maxRow += 1
-        maxCol = 1
-      $(widget).attr('data-row', maxRow)
-      $(widget).attr('data-col', maxCol)
-      maxCol += 1
+    $(widget).attr('data-row', positions[index].row)
+    $(widget).attr('data-col', positions[index].col)
 
 Dashing.getWidgetPositions = ->
   $(".gridster ul:first").gridster().data('gridster').serialize()
@@ -40,9 +24,7 @@ Dashing.showGridsterInstructions = ->
       <script type='text/javascript'>\n
       $(function() {\n
       \ \ Dashing.gridsterLayout('#{JSON.stringify(Dashing.currentWidgetPositions)}')\n
-      });\n
-      </script>
-    ")
+      });\n</script>")
 
 $ ->
   $('#save-gridster').leanModal()
