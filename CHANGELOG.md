@@ -1,3 +1,7 @@
+## 2.6.1
+
+* Revert gridster dashing to a newer version
+
 ## 2.6.0
 
 * Upgrade assets based on [Dashing](https://github.com/Shopify/dashing) repo
