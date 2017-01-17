@@ -1,3 +1,8 @@
+## 2.6.0
+
+* Upgrade assets based on [Dashing](https://github.com/Shopify/dashing) repo
+* Upgrade gems
+
 ## 2.5.0
 
 * Saves last event on redis to be sent on first connection (@scambra)
