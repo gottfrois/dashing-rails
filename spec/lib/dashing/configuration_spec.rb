@@ -5,7 +5,7 @@ RSpec.describe Dashing::Configuration do
   it { expect(instance.engine_path).to            eq('/dashing') }
   # it { expect(instance.scheduler).to              be_a(::Rufus::Scheduler.new) }
   it { expect(instance.redis).to                  be_a(::ConnectionPool) }
-  it { instance.redis.with {|r| expect(r).to      be_a(::Redis)} }
+  it { instance.redis.with { |r| expect(r).to     be_a(::Redis) } }
 
   # Redis
   it { expect(instance.redis_host).to             eq('127.0.0.1') }

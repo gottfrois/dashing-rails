@@ -148,8 +148,11 @@ dashing_events.*
 where `*` can be anything. This give you all the flexibility you need to push to redis. For example the `send_event` method provided by Dashing uses the following namespace:
 
 ```ruby
-redis.publish("dashing_events.create", {})
+redis.with do |redis_connection|
+  redis_connection.publish("dashing_events.create", {})
+end
 ```
+(where `redis_connection` is a redis connection from a connection pooler.)
 
 You can configure the redis namespace in `config/initializers/dashing.rb`:
 
