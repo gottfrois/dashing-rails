@@ -1,9 +1,10 @@
 RSpec.describe Dashing::WidgetsController do
 
   let(:redis) { double }
+  let(:redis_connection) { double }
 
   before do
-    stub_redis(redis)
+    stub_redis_with_connection(redis, redis_connection)
     @routes = Dashing::Engine.routes
   end
 
@@ -49,7 +50,7 @@ RSpec.describe Dashing::WidgetsController do
     context 'when valid' do
 
       before do
-        expect(redis).to receive(:publish)
+        expect(redis_connection).to receive(:publish)
       end
 
       it 'responds success' do

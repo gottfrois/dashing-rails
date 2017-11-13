@@ -21,8 +21,10 @@ module Dashing
       if defined?(::PhusionPassenger)
         ::PhusionPassenger.on_event(:starting_worker_process) do |forked|
           if forked
-            ::Dashing.redis.client.disconnect
-            ::Dashing.redis.client.connect
+            ::Dashing.redis.with do |redis_connection|
+              redis_connection.client.disconnect
+              redis_connection.client.connect
+            end
           end
         end
       end

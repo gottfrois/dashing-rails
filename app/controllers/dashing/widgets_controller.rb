@@ -14,7 +14,9 @@ module Dashing
     def update
       data = params[:widget] || {}
       hash = data.merge(id: params[:name], updatedAt: Time.now.utc.to_i)
-      Dashing.redis.publish("#{Dashing.config.redis_namespace}.create", hash.to_json)
+      Dashing.redis.with do |redis_connection|
+        redis_connection.publish("#{Dashing.config.redis_namespace}.create", hash.to_json)
+      end
 
       render nothing: true
     end
