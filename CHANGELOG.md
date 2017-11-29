@@ -1,3 +1,8 @@
+## 2.6.2
+
+* Stop using connection pool wrapper as per the documentation [https://github.com/gottfrois/dashing-rails/pull/103](https://github.com/gottfrois/dashing-rails/pull/103)
+
+
 ## 2.6.1
 
 * Revert gridster dashing to a newer version
