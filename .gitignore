@@ -9,3 +9,4 @@ spec/dummy/.sass-cache
 .coveralls.yml
 coverage/
 test_widget.*
+Gemfile.lock
