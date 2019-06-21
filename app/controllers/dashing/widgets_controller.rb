@@ -24,7 +24,7 @@ module Dashing
     private
 
     def check_widget_name
-      raise 'bad widget name' unless params[:name] =~ /\A[a-zA-z0-9_\-]+\z/
+      raise 'bad widget name' unless params[:name] =~ /\A[a-zA-Z0-9_\-]+\z/
     end
 
     def widget_path
@@ -40,7 +40,7 @@ module Dashing
     end
 
     def template_not_found
-      raise "Count not find template for widget #{params[:name]}. Define your widget in #{main_app_view_path}"
+      raise "Could not find template for widget #{params[:name]}. Define your widget in #{main_app_view_path}"
     end
 
   end
