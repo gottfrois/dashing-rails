@@ -20,7 +20,7 @@ RSpec.describe Dashing::DashboardsController do
   describe 'GET "show"' do
 
     def action(params = {})
-      get :show, params
+      get :show, params: params
     end
 
     context 'when template exists' do

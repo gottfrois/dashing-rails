@@ -11,7 +11,7 @@ RSpec.describe Dashing::WidgetsController do
   describe 'GET "show"' do
 
     def action(params = {})
-      get :show, params
+      get :show, params: params
     end
 
     context 'when default template exists' do
@@ -44,7 +44,7 @@ RSpec.describe Dashing::WidgetsController do
   describe 'PUT "update"' do
 
     def action(params = {})
-      put :update, params
+      put :update, params: params
     end
 
     context 'when valid' do
